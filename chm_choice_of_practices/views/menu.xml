@@ -1,0 +1,9 @@
+<odoo>
+    <menuitem id="menu_chm_choice_of_practices" name="Практики"
+              action="chm_choice_of_practices.action_enterprises"
+              sequence="1" web_icon="chm_choice_of_practices,static/description/icon.png" >
+
+        <menuitem id="menu_enterprises" sequence="1" name="Підприємства" action="chm_choice_of_practices.action_enterprises"/>
+    </menuitem>
+</odoo>
+

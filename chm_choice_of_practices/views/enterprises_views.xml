@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_form_enterprises" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.enterprises.form</field>
+        <field name="model">chm_choice_of_practices.enterprises</field>
+        <field name="arch" type="xml">
+            <form string="Підприємства">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="edrpou"/>
+                        <field name="address"/>
+                        <field name="cite"/>
+                        <field name="field_of_activity"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_enterprises" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.enterprises.tree</field>
+        <field name="model">chm_choice_of_practices.enterprises</field>
+        <field name="arch" type="xml">
+            <tree string="Підприємства">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="edrpou"/>
+                <field name="address"/>
+                <field name="cite"/>
+                <field name="field_of_activity"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_enterprises" model="ir.actions.act_window">
+        <field name="name">Підприємства</field>
+        <field name="res_model">chm_choice_of_practices.enterprises</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Список підприємств</p>
+        </field>
+    </record>
+
+</odoo>
