@@ -5,14 +5,43 @@
         <field name="arch" type="xml">
             <form string="Підприємства">
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="actions_create_request" type="object">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Подати заявку
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title" style="display: flex; align-items: center; min-width: 80%;">
+                        <h1 style="flex-grow: 1; white-space: nowrap; overflow: hidden;">
+                            <field name="name"/>
+                        </h1>
+                    </div>
                     <group>
-                        <field name="name"/>
-                        <field name="partner_id"/>
-                        <field name="edrpou"/>
-                        <field name="address"/>
-                        <field name="cite"/>
-                        <field name="field_of_activity"/>
-                        <field name="notes"/>
+                        <group>
+<!--                            <field name="partner_id"/>-->
+                            <field name="edrpou"/>
+                            <field name="address"/>
+                            <field name="cite"/>
+                            <field name="field_of_activity"/>
+                            <field name="notes"/>
+                        </group>
+                    </group>
+                    <group>
+<!--                        <field name="practice_request_ids">-->
+<!--                            <tree>-->
+<!--                                <field name="name"/>-->
+<!--                                <field name="state"/>-->
+<!--                                <field name="student_id"/>-->
+<!--                                <field name="agreement_id"/>-->
+<!--                                <field name="date_from"/>-->
+<!--                                <field name="date_to"/>-->
+<!--                            </tree>-->
+<!--                        </field>-->
                     </group>
                 </sheet>
             </form>
@@ -25,7 +54,7 @@
         <field name="arch" type="xml">
             <tree string="Підприємства">
                 <field name="name"/>
-                <field name="partner_id"/>
+<!--                <field name="partner_id"/>-->
                 <field name="edrpou"/>
                 <field name="address"/>
                 <field name="cite"/>

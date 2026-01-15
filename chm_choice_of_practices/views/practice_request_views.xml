@@ -1,0 +1,86 @@
+<odoo>
+    <record id="view_form_practice_request" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_request.form</field>
+        <field name="model">chm_choice_of_practices.practice_request</field>
+        <field name="arch" type="xml">
+            <form string="Заяви на практику">
+                <header>
+                    <field name="state" widget="statusbar" options="{'fold_field': 'fold'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box" groups="chm_choice_of_practices.group_practice_manager">
+                        <button class="oe_stat_button" name="action_approve" type="object">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Схвалити
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" name="action_reject" type="object">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Відхилити
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" name="action_needs_edits" type="object">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Потребує правок
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title" style="display: flex; align-items: center; min-width: 80%;">
+                        <h1 style="flex-grow: 1; white-space: nowrap; overflow: hidden;">
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="enterprises_id"/>
+                            <field name="agreement_id" readonly="1"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="comment"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_practice_request" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_request.tree</field>
+        <field name="model">chm_choice_of_practices.practice_request</field>
+        <field name="arch" type="xml">
+            <tree string="Заяви на практику">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="student_id"/>
+                <field name="agreement_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_practice_request" model="ir.actions.act_window">
+        <field name="name">Заяви на практику</field>
+        <field name="res_model">chm_choice_of_practices.practice_request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Список заяв</p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_form_practice_agreement" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_agreement.form</field>
+        <field name="model">chm_choice_of_practices.practice_agreement</field>
+        <field name="arch" type="xml">
+            <form string="Угоди">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_practice_agreement" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_agreement.tree</field>
+        <field name="model">chm_choice_of_practices.practice_agreement</field>
+        <field name="arch" type="xml">
+            <tree string="Угоди">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_practice_agreement" model="ir.actions.act_window">
+        <field name="name">Угоди</field>
+        <field name="res_model">chm_choice_of_practices.practice_agreement</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Список угод</p>
+        </field>
+    </record>
+
+</odoo>
