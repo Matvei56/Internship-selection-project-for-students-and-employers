@@ -7,12 +7,15 @@
         'views/enterprises_views.xml',
         'views/practice_agreement_views.xml',
         'views/practice_request_views.xml',
+        'views/res_partner_views.xml',
         'security/role_group.xml',
         'security/ir.model.access.csv',
 
 
-        'views/menu.xml'
+        'views/menu.xml',
+        'views/rewrite_menu.xml'
     ],
     "application": True,
     "installable": True,
+
 }

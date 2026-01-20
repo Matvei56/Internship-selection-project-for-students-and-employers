@@ -32,16 +32,16 @@
                         </group>
                     </group>
                     <group>
-<!--                        <field name="practice_request_ids">-->
-<!--                            <tree>-->
-<!--                                <field name="name"/>-->
-<!--                                <field name="state"/>-->
-<!--                                <field name="student_id"/>-->
-<!--                                <field name="agreement_id"/>-->
-<!--                                <field name="date_from"/>-->
-<!--                                <field name="date_to"/>-->
-<!--                            </tree>-->
-<!--                        </field>-->
+                        <field name="practice_request_ids" groups="chm_choice_of_practices.group_practice_manager">
+                            <tree>
+                                <field name="name"/>
+                                <field name="state"/>
+                                <field name="student_id"/>
+                                <field name="agreement_id"/>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </tree>
+                        </field>
                     </group>
                 </sheet>
             </form>

@@ -23,7 +23,9 @@
             <field name="groups_id" eval="[(4,ref('chm_choice_of_practices.group_administrator'))]"/>
         </record>
         <record id="base.default_user" model="res.users">
-            <field name="groups_id" eval="[(4, ref('chm_choice_of_practices.group_student'))]"/>
+            <field name="groups_id" eval="[(4,ref('chm_choice_of_practices.group_student'))]"/>
         </record>
+
+
     </data>
 </odoo>
