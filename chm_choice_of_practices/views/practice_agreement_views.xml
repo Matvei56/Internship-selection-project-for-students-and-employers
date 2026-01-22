@@ -3,11 +3,81 @@
         <field name="name">chm_choice_of_practices.practice_agreement.form</field>
         <field name="model">chm_choice_of_practices.practice_agreement</field>
         <field name="arch" type="xml">
-            <form string="Угоди">
+            <form string="Угода з підприємством">
+                <header>
+                    <field name="state" widget="statusbar" options="{'fold_field': 'fold'}"/>
+                </header>
                 <sheet>
+
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="action_activate" type="object"
+                                attrs="{'invisible': [('state','in','active')]}">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Активувати заяву
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" name="action_deactivate" type="object"
+                                attrs="{'invisible': [('state','in',('expired', 'inactive'))]}">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Деактивувати заяву
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="display_name" readonly="1"/>
+                        </h1>
+                    </div>
+
                     <group>
-                        <field name="name"/>
+                        <group>
+                            <field name="number"/>
+                            <field name="date_start"/>
+                            <field name="enterprises_id"/>
+                        </group>
+                        <group>
+                            <field name="is_unlimited"/>
+                            <field name="is_auto_prolongation"/>
+                            <field name="date_end"
+                                   attrs="{'invisible': [('is_unlimited','=',True)]}"/>
+                        </group>
                     </group>
+
+
+                    <notebook>
+
+                        <!--                        <page string="Спеціальності / ОП">-->
+                        <!--                            <field name="speciality_ids" widget="many2many_tags"/>-->
+                        <!--                        </page>-->
+
+                        <page string="Умови практики">
+                            <group>
+                                <group>
+                                    <field name="practice_type"/>
+                                    <field name="season"/>
+                                </group>
+                                <group>
+                                    <field name="places_limit"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Додаткові умови">
+                            <field name="additional_conditions"
+                                   placeholder="Вкажіть особливі умови, вимоги або застереження..."/>
+                        </page>
+
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -17,8 +87,21 @@
         <field name="name">chm_choice_of_practices.practice_agreement.tree</field>
         <field name="model">chm_choice_of_practices.practice_agreement</field>
         <field name="arch" type="xml">
-            <tree string="Угоди">
-                <field name="name"/>
+            <tree string="Угоди з підприємствами"
+                  decoration-muted="state=='expired'"
+                  decoration-danger="state=='inactive'">
+                <field name="display_name"/>
+                <field name="state"/>
+                <field name="enterprises_id"/>
+                <field name="number"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="is_unlimited"/>
+                <field name="is_auto_prolongation"/>
+                <field name="practice_type"/>
+                <field name="season"/>
+                <field name="places_limit"/>
+
             </tree>
         </field>
     </record>

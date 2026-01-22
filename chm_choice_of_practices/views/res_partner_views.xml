@@ -1,0 +1,113 @@
+<odoo>
+    <record id="res_partner_orm_view_chm_choice_of_practices_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.chm.choice.practices.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <!--        <field name="mode">primary</field>-->
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='title']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@id='individual']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='website']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="contact_type_selection" readonly="1" style="margin-right: 1%;"/>
+            </xpath>
+            <xpath expr="//div[@class='o_row']" position="before">
+                <group class="oe_edit_only">
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="middle_name"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="name" readonly="1"  class="oe_read_only"/>
+            </xpath>
+            <xpath expr="//span[@name='address_name']" position="before">
+                <field name="student_group"/>
+            </xpath>
+<!--            <xpath expr="//div[hasclass('oe_title')]" position="attributes">-->
+<!--                <attribute name="invisible">1</attribute>-->
+<!--            </xpath>-->
+
+
+            <!--    full_name = fields.Char(-->
+            <xpath expr="//notebook" position="after">
+                <notebook groups="chm_choice_of_practices.group_practice_manager">
+                    <page string="Заяви на практику">
+                        <group>
+                            <field name="practice_request_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="enterprises_id"/>
+                                    <field name="state"/>
+                                    <field name="student_id"/>
+                                    <field name="agreement_id"/>
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_kanban_view_chm_choice_of_practices_inherit" model="ir.ui.view">
+        <field name="name">res.partner.kanban.chm.choice.practices.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <!--        <field name="mode">primary</field>-->
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='o_row']" position="after">
+                <field name="contact_type_selection"/>
+            </xpath>
+            <xpath expr="//div[@class='o_row']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//ul" position="attributes">
+                <attribute name="t-if">False</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_tags_section')]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_students_view_kanban" model="ir.actions.act_window">
+        <field name="name">Студенти</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_id" ref="base.res_partner_kanban_view"/>
+        <field name="domain">[('contact_type_selection', '=', 'student')]</field>
+    </record>
+
+    <record id="action_practice_manager_view_kanban" model="ir.actions.act_window">
+        <field name="name">Керівники практики</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_id" ref="base.res_partner_kanban_view"/>
+        <field name="domain">[('contact_type_selection', '=', 'manager')]</field>
+    </record>
+</odoo>

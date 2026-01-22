@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_form_placement_practical" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.placement_practical.form</field>
+        <field name="model">chm_choice_of_practices.placement_practical</field>
+        <field name="arch" type="xml">
+            <form string="направлення">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_placement_practical" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.placement_practical.tree</field>
+        <field name="model">chm_choice_of_practices.placement_practical</field>
+        <field name="arch" type="xml">
+            <tree string="направлкння">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_placement_practical" model="ir.actions.act_window">
+        <field name="name">Направлення на практику</field>
+        <field name="res_model">chm_choice_of_practices.placement_practical</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Список направлень</p>
+        </field>
+    </record>
+
+</odoo>

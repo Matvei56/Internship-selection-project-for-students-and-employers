@@ -19,6 +19,12 @@
             <menuitem id="menu_students" sequence="3" name="Студенти"
                       action="action_students_view_kanban"/>
         </menuitem>
+        <menuitem id="menu_education_program" sequence="5" name="Освітні програми"
+                  groups="chm_choice_of_practices.group_practice_manager">
+            <menuitem id="menu_student_group" sequence="2" name="Групи"
+                      action="chm_choice_of_practices.action_student_group"/>
+        </menuitem>
+
     </menuitem>
 
 

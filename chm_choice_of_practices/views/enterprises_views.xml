@@ -4,6 +4,9 @@
         <field name="model">chm_choice_of_practices.enterprises</field>
         <field name="arch" type="xml">
             <form string="Підприємства">
+                <header>
+                    <field name="state" widget="statusbar" options="{'fold_field': 'fold'}"/>
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button class="oe_stat_button" name="actions_create_request" type="object">
@@ -23,7 +26,7 @@
                     </div>
                     <group>
                         <group>
-<!--                            <field name="partner_id"/>-->
+                            <!--                            <field name="partner_id"/>-->
                             <field name="edrpou"/>
                             <field name="address"/>
                             <field name="cite"/>
@@ -31,18 +34,42 @@
                             <field name="notes"/>
                         </group>
                     </group>
-                    <group>
-                        <field name="practice_request_ids" groups="chm_choice_of_practices.group_practice_manager">
-                            <tree>
-                                <field name="name"/>
-                                <field name="state"/>
-                                <field name="student_id"/>
-                                <field name="agreement_id"/>
-                                <field name="date_from"/>
-                                <field name="date_to"/>
-                            </tree>
-                        </field>
-                    </group>
+
+                    <notebook groups="chm_choice_of_practices.group_practice_manager">
+                        <page string="Заяви">
+                            <group>
+                                <field name="practice_request_ids">
+                                    <tree decoration-muted="state=='new'"
+                                          decoration-danger="state=='rejected'"
+                                          decoration-warning="state=='needs_edits'"
+                                          decoration-info="state=='in_progress'"
+                                          decoration-success="state=='approved'">
+                                        <field name="name"/>
+                                        <field name="state"/>
+                                        <field name="student_id"/>
+                                        <field name="agreement_id"/>
+                                        <field name="date_from"/>
+                                        <field name="date_to"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Угоди">
+                            <field name="practice_agreement_ids"
+                            >
+                                <tree decoration-muted="state=='expired'"
+                                      decoration-danger="state=='inactive'">
+                                    <field name="display_name" readonly="1"/>
+                                    <field name="state"/>
+                                    <field name="number"/>
+                                    <field name="date_start"/>
+                                    <field name="enterprises_id"/>
+                                    <field name="is_unlimited"/>
+                                    <field name="is_auto_prolongation"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -52,9 +79,11 @@
         <field name="name">chm_choice_of_practices.enterprises.tree</field>
         <field name="model">chm_choice_of_practices.enterprises</field>
         <field name="arch" type="xml">
-            <tree string="Підприємства">
+            <tree string="Підприємства"
+                  decoration-danger="state=='inactive'">
                 <field name="name"/>
-<!--                <field name="partner_id"/>-->
+                <field name="state"/>
+                <!--                <field name="partner_id"/>-->
                 <field name="edrpou"/>
                 <field name="address"/>
                 <field name="cite"/>

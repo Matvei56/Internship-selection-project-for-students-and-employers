@@ -45,11 +45,10 @@
                     </div>
                     <group>
                         <group>
-                            <field name="student_id" readonly="1"/>
-
+                            <field name="student_id"/>
                             <field name="enterprises_id"/>
-                            <field name="agreement_id" readonly="1"
-                                   attrs="{'invisible': [('agreement_id','=',False)]}"/>
+                            <field name="agreement_id"
+                            />
                             <field name="date_from"/>
                             <field name="date_to"/>
                         </group>
@@ -58,6 +57,11 @@
                         <field name="comment" placeholder="Коментар"/>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
@@ -66,7 +70,12 @@
         <field name="name">chm_choice_of_practices.practice_request.tree</field>
         <field name="model">chm_choice_of_practices.practice_request</field>
         <field name="arch" type="xml">
-            <tree string="Заяви на практику">
+            <tree string="Заяви на практику"
+                  decoration-muted="state=='new'"
+                  decoration-danger="state=='rejected'"
+                  decoration-warning="state=='needs_edits'"
+                  decoration-info="state=='in_progress'"
+                  decoration-success="state=='approved'">
                 <field name="name"/>
                 <field name="state"/>
                 <field name="student_id"/>

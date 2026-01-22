@@ -12,8 +12,16 @@ class Enterprises(models.Model):
     cite = fields.Char(string="Сайт")
     field_of_activity = fields.Char(string="Сфера діяльності")
     notes = fields.Text(string="Примітки")
+    state = fields.Selection([
+        ('inactive', 'Угода не активна'),
+        ('active', 'Угода активна'),
+    ], string="Статус угоди", tracking=True)
+
     practice_request_ids = fields.One2many('chm_choice_of_practices.practice_request', 'enterprises_id',
                                            string='Заяви')
+
+    practice_agreement_ids = fields.One2many('chm_choice_of_practices.practice_agreement', 'enterprises_id',
+                                           string='Угоди')
 
     def actions_create_request(self):
         self.env.user.notify_info(message='Створення заяви', title='Службове повідомлення')
@@ -30,3 +38,14 @@ class Enterprises(models.Model):
                 'default_enterprises_id': self.id,
             },
         }
+
+    @api.onchange('practice_agreement_ids')
+    @api.depends('practice_agreement_ids')
+    def _check_and_update_state_from_agreements(self):
+        for rec in self:
+            active_exists = any(
+                agreement.state == 'active'
+                for agreement in rec.practice_agreement_ids
+            )
+
+            rec.state = 'active' if active_exists else 'inactive'
