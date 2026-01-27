@@ -10,6 +10,7 @@ class ResUsers(models.Model):
         for user in users:
             user._sync_partner_contact_type()
             user._sync_student_only_group()
+
         return users
 
     def write(self, vals):
@@ -17,6 +18,7 @@ class ResUsers(models.Model):
         for user in self:
             user._sync_partner_contact_type()
             user._sync_student_only_group()
+
         return res
 
     def _sync_partner_contact_type(self):

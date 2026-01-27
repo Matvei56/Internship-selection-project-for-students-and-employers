@@ -106,6 +106,74 @@
         </field>
     </record>
 
+    <record id="view_practice_agreement_search" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_agreement.search</field>
+        <field name="model">chm_choice_of_practices.practice_agreement</field>
+        <field name="arch" type="xml">
+            <search string="Угоди з підприємствами">
+                <field name="number" string="Номер угоди"/>
+                <field name="enterprises_id" string="Підприємство"/>
+                <field name="date_start" string="Дата укладення"/>
+                <field name="date_end" string="Термін дії до"/>
+                <field name="practice_type" string="Тип практики"/>
+                <field name="season" string="Сезонність"/>
+                <separator/>
+
+                <filter name="state_active"
+                        string="Активні"
+                        domain="[('state','=','active')]"/>
+                <filter name="state_inactive"
+                        string="Неактивні"
+                        domain="[('state','=','inactive')]"/>
+                <filter name="state_expired"
+                        string="Прострочені"
+                        domain="[('state','=','expired')]"/>
+                <separator/>
+
+                <filter name="educational"
+                        string="Навчальна практика"
+                        domain="[('practice_type','=','educational')]"/>
+                <filter name="industrial"
+                        string="Виробнича практика"
+                        domain="[('practice_type','=','industrial')]"/>
+                <filter name="pre_diploma"
+                        string="Переддипломна практика"
+                        domain="[('practice_type','=','pre_diploma')]"/>
+                <separator/>
+
+                <filter name="unlimited"
+                        string="Безстрокові"
+                        domain="[('is_unlimited','=',True)]"/>
+                <filter name="auto_prolongation"
+                        string="З автопролонгацією"
+                        domain="[('is_auto_prolongation','=',True)]"/>
+                <filter name="with_places"
+                        string="З лімітом місць"
+                        domain="[('places_limit','>',0)]"/>
+                <separator/>
+
+                <group expand="0" string="Групувати за">
+                    <filter name="group_by_state"
+                            string="Статус"
+                            context="{'group_by':'state'}"/>
+                    <filter name="group_by_enterprise"
+                            string="Підприємство"
+                            context="{'group_by':'enterprises_id'}"/>
+                    <filter name="group_by_practice_type"
+                            string="Тип практики"
+                            context="{'group_by':'practice_type'}"/>
+                    <filter name="group_by_season"
+                            string="Сезонність"
+                            context="{'group_by':'season'}"/>
+                    <filter name="group_by_date_start"
+                            string="Дата укладення"
+                            context="{'group_by':'date_start'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
     <record id="action_practice_agreement" model="ir.actions.act_window">
         <field name="name">Угоди</field>
         <field name="res_model">chm_choice_of_practices.practice_agreement</field>

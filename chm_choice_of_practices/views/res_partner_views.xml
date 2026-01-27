@@ -61,7 +61,6 @@
                                     <field name="enterprises_id"/>
                                     <field name="state"/>
                                     <field name="student_id"/>
-                                    <field name="agreement_id"/>
                                     <field name="date_from"/>
                                     <field name="date_to"/>
                                 </tree>

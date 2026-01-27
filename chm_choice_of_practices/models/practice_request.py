@@ -8,7 +8,7 @@ class PracticeRequest(models.Model):
 
     name = fields.Char(string="Назва", required=True, default="Нова заява")
     student_id = fields.Many2one(comodel_name="res.partner", string="Студент", required=True)
-    agreement_id = fields.Many2one(comodel_name="chm_choice_of_practices.practice_agreement", string="Угода")
+    # agreement_id = fields.Many2one(comodel_name="chm_choice_of_practices.practice_agreement", string="Угода")
     enterprises_id = fields.Many2one(comodel_name="chm_choice_of_practices.enterprises", string="Підприємство")
     date_from = fields.Date(string="Дата створення", default=fields.Date.today)
     date_to = fields.Date(string="Дата завершення")
@@ -33,8 +33,7 @@ class PracticeRequest(models.Model):
         for record in self:
             record.state = 'needs_edits'
 
-
-    @api.model
+    @api.model_create_multi
     def create(self, vals_list):
         records = super().create(vals_list)
         records.state = 'in_progress'
@@ -51,19 +50,15 @@ class PracticeRequest(models.Model):
                 f"Студент <b>{student_name}</b> подав нову заявку "
                 f"на підприємство <b>{enterprise_name}</b>."
             )
-
             rec.message_subscribe(partner_ids=partners.ids)
             rec.message_post(
                 body=body,
                 subject="Нова заявка на практику",
-                message_type="comment",
+                message_type="notification",
+                subtype_xmlid="mail.mt_comment",
+                partner_ids=partners.ids,
+                email_from="cerednikmatvei57@ukr.net",
             )
-
-            for partner in partners:
-                partner.message_notify(
-                    body=body,
-                    subject="Нова заявка на практику"
-                )
 
         return records
 

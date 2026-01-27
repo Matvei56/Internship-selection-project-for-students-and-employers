@@ -28,7 +28,9 @@
                         <group>
                             <!--                            <field name="partner_id"/>-->
                             <field name="edrpou"/>
+                            <field name="partner_id" readonly="1"/>
                             <field name="address"/>
+                            <field name="practice_type"/>
                             <field name="cite"/>
                             <field name="field_of_activity"/>
                             <field name="notes"/>
@@ -37,22 +39,22 @@
 
                     <notebook groups="chm_choice_of_practices.group_practice_manager">
                         <page string="Заяви">
-                            <group>
-                                <field name="practice_request_ids">
-                                    <tree decoration-muted="state=='new'"
-                                          decoration-danger="state=='rejected'"
-                                          decoration-warning="state=='needs_edits'"
-                                          decoration-info="state=='in_progress'"
-                                          decoration-success="state=='approved'">
-                                        <field name="name"/>
-                                        <field name="state"/>
-                                        <field name="student_id"/>
-                                        <field name="agreement_id"/>
-                                        <field name="date_from"/>
-                                        <field name="date_to"/>
-                                    </tree>
-                                </field>
-                            </group>
+                            <label for="practice_request_count"/>
+                            <field name="practice_request_count"/>
+                            <field name="practice_request_ids">
+                                <tree decoration-muted="state=='new'"
+                                      decoration-danger="state=='rejected'"
+                                      decoration-warning="state=='needs_edits'"
+                                      decoration-info="state=='in_progress'"
+                                      decoration-success="state=='approved'">
+                                    <field name="name"/>
+                                    <field name="state"/>
+                                    <field name="student_id"/>
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                </tree>
+                            </field>
+
                         </page>
                         <page string="Угоди">
                             <field name="practice_agreement_ids"
@@ -69,6 +71,24 @@
                                 </tree>
                             </field>
                         </page>
+                        <page string="Список підприємств">
+                            <label for="enterprises_count"/>
+                            <field name="enterprises_count"/>
+                            <field name="enterprises_ids">
+                                <tree string="Підприємства"
+                                      decoration-danger="state=='inactive'">
+                                    <field name="name"/>
+                                    <field name="state"/>
+                                    <!--                <field name="partner_id"/>-->
+                                    <field name="edrpou"/>
+                                    <field name="practice_type"/>
+                                    <field name="address"/>
+                                    <field name="cite"/>
+                                    <field name="field_of_activity"/>
+                                    <field name="notes"/>
+                                </tree>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
@@ -82,16 +102,71 @@
             <tree string="Підприємства"
                   decoration-danger="state=='inactive'">
                 <field name="name"/>
-                <field name="state"/>
-                <!--                <field name="partner_id"/>-->
-                <field name="edrpou"/>
+                <field name="state" groups="chm_choice_of_practices.group_practice_manager"/>
+                <field name="partner_id" string="Відповідвльний"
+                       groups="chm_choice_of_practices.group_practice_manager"/>
+                <field name="edrpou" groups="chm_choice_of_practices.group_practice_manager"/>
+                <field name="practice_type"/>
                 <field name="address"/>
-                <field name="cite"/>
+                <field name="cite" groups="chm_choice_of_practices.group_practice_manager"/>
                 <field name="field_of_activity"/>
-                <field name="notes"/>
+                <field name="practice_request_count" groups="chm_choice_of_practices.group_practice_manager"/>
             </tree>
         </field>
     </record>
+
+    <record id="view_enterprises_search" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.enterprises.search</field>
+        <field name="model">chm_choice_of_practices.enterprises</field>
+        <field name="arch" type="xml">
+            <search string="Підприємства">
+                <field name="name" string="Назва"/>
+                <field name="edrpou" string="ЄДРПОУ"/>
+                <field name="partner_id" string="Відповідальна особа"/>
+                <field name="address" string="Адреса"/>
+                <field name="field_of_activity" string="Сфера діяльності"/>
+                <separator/>
+
+                <filter name="active"
+                        string="Активні"
+                        domain="[('state','=','active')]"/>
+                <filter name="inactive"
+                        string="Не активні"
+                        domain="[('state','=','inactive')]"/>
+                <separator/>
+                <filter name="educational"
+                        string="Навчальна практика"
+                        domain="[('practice_type','=','educational')]"/>
+                <filter name="project"
+                        string="Проєктно-технологічна"
+                        domain="[('practice_type','=','project_technological')]"/>
+                <filter name="industrial"
+                        string="Виробнича"
+                        domain="[('practice_type','=','industrial')]"/>
+                <filter name="pre_diploma"
+                        string="Переддипломна"
+                        domain="[('practice_type','=','pre_diploma')]"/>
+                <separator/>
+
+                <group expand="0" string="Групувати за">
+                    <filter name="group_by_state"
+                            string="Статус угоди"
+                            context="{'group_by':'state'}"/>
+                    <filter name="group_by_practice_type"
+                            string="Тип практики"
+                            context="{'group_by':'practice_type'}"/>
+                    <filter name="group_by_partner"
+                            string="Відповідальна особа"
+                            context="{'group_by':'partner_id'}"/>
+                    <filter name="group_by_field"
+                            string="Сфера діяльності"
+                            context="{'group_by':'field_of_activity'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
 
     <record id="action_enterprises" model="ir.actions.act_window">
         <field name="name">Підприємства</field>

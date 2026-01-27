@@ -5,9 +5,14 @@
         <menuitem id="menu_enterprises" sequence="1" name="Підприємства"
                   action="chm_choice_of_practices.action_enterprises"/>
         <menuitem id="menu_practice_agreement" sequence="2" name="Угоди"
-                  action="chm_choice_of_practices.action_practice_agreement"/>
-        <menuitem id="menu_practice_request" sequence="3" name="Заяви"
-                  action="chm_choice_of_practices.action_practice_request"/>
+                  action="chm_choice_of_practices.action_practice_agreement"
+                  groups="chm_choice_of_practices.group_administrator"/>
+        <menuitem id="menu_practice_request1" sequence="3" name="Заяви"
+                  action="chm_choice_of_practices.action_practice_request"
+                  groups="chm_choice_of_practices.group_practice_manager"/>
+        <menuitem id="menu_practice_request_for_student" sequence="3" name="Мої заяви"
+                  action="chm_choice_of_practices.action_practice_request"
+                  groups="chm_choice_of_practices.group_student_only"/>
         <menuitem id="menu_general_contacts" sequence="4" name="Контакти"
                   groups="chm_choice_of_practices.group_practice_manager">
             <menuitem id="menu_contacts" sequence="1" name="Усі контакти"
@@ -24,6 +29,9 @@
             <menuitem id="menu_student_group" sequence="2" name="Групи"
                       action="chm_choice_of_practices.action_student_group"/>
         </menuitem>
+        <menuitem id="menu_res_users" sequence="6" name="Користувачі"
+                  groups="chm_choice_of_practices.group_administrator"
+                  action="base.action_res_users"/>
 
     </menuitem>
 

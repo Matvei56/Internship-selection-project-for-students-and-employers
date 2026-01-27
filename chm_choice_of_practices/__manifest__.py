@@ -2,8 +2,10 @@
     "name": "Choice of Practices",
     "maintainer": 'Cherednyk Matvii',
     "version": "15.0",
-    "depends": ['base','alnas_docx','web_notify'],
+    "depends": ['base', 'alnas_xlsx','contacts','utm', 'alnas_docx', 'web_notify'],
     "data": [
+        'reports/reports_templates.xml',
+
         'data/student_group_data.xml',
         'data/ir_cron_data.xml',
         'views/enterprises_views.xml',
@@ -16,10 +18,15 @@
         'security/ir.model.access.csv',
         'security/rules.xml',
 
-
         'views/menu.xml',
         'views/rewrite_menu.xml'
     ],
+    # 'assets': {
+    #     'web.assets_backend': [
+    #         'chm_choice_of_practices/static/src/js/xlsx_print_button.js',
+    #     ],
+    # },
+
     "application": True,
     "installable": True,
 

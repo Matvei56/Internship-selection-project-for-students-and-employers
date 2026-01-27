@@ -47,8 +47,6 @@
                         <group>
                             <field name="student_id"/>
                             <field name="enterprises_id"/>
-                            <field name="agreement_id"
-                            />
                             <field name="date_from"/>
                             <field name="date_to"/>
                         </group>
@@ -79,12 +77,69 @@
                 <field name="name"/>
                 <field name="state"/>
                 <field name="student_id"/>
-                <field name="agreement_id"/>
                 <field name="date_from"/>
                 <field name="date_to"/>
             </tree>
         </field>
     </record>
+
+
+    <record id="view_practice_request_search" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_request.search</field>
+        <field name="model">chm_choice_of_practices.practice_request</field>
+        <field name="arch" type="xml">
+            <search string="Заяви на практику">
+                <field name="name" string="Назва"/>
+                <field name="student_id" string="Студент"/>
+                <field name="enterprises_id" string="Підприємство"/>
+                <field name="date_from" string="Дата створення"/>
+                <field name="date_to" string="Дата завершення"/>
+                <separator/>
+
+                <filter name="state_new"
+                        string="Нові"
+                        domain="[('state','=','new')]"/>
+                <filter name="state_in_progress"
+                        string="В обробці"
+                        domain="[('state','=','in_progress')]"/>
+                <filter name="state_approved"
+                        string="Схвалені"
+                        domain="[('state','=','approved')]"/>
+                <filter name="state_rejected"
+                        string="Відхилені"
+                        domain="[('state','=','rejected')]"/>
+                <filter name="state_needs_edits"
+                        string="Потребують правок"
+                        domain="[('state','=','needs_edits')]"/>
+                <separator/>
+
+                <filter name="today"
+                        string="Створені сьогодні"
+                        domain="[('date_from','=',context_today().strftime('%%Y-%%m-%%d'))]"/>
+                <filter name="this_month"
+                        string="Створені цього місяця"
+                        domain="[('date_from','>=', (context_today().replace(day=1)).strftime('%%Y-%%m-%%d'))]"/>
+                <separator/>
+
+
+                <group expand="0" string="Групувати за">
+                    <filter name="group_by_state"
+                            string="Статус"
+                            context="{'group_by':'state'}"/>
+                    <filter name="group_by_student"
+                            string="Студент"
+                            context="{'group_by':'student_id'}"/>
+                    <filter name="group_by_enterprise"
+                            string="Підприємство"
+                            context="{'group_by':'enterprises_id'}"/>
+                    <filter name="group_by_date"
+                            string="Дата створення"
+                            context="{'group_by':'date_from'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
 
     <record id="action_practice_request" model="ir.actions.act_window">
         <field name="name">Заяви на практику</field>
