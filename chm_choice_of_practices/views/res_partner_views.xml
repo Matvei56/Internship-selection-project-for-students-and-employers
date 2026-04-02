@@ -11,6 +11,9 @@
             <xpath expr="//field[@name='company_type']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//field[@name='mobile']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
             <xpath expr="//field[@name='parent_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
@@ -40,14 +43,14 @@
                 </group>
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="name" readonly="1"  class="oe_read_only"/>
+                <field name="name" readonly="1" class="oe_read_only"/>
             </xpath>
             <xpath expr="//span[@name='address_name']" position="before">
-                <field name="student_group"/>
+                <field name="student_group_id"/>
             </xpath>
-<!--            <xpath expr="//div[hasclass('oe_title')]" position="attributes">-->
-<!--                <attribute name="invisible">1</attribute>-->
-<!--            </xpath>-->
+            <!--            <xpath expr="//div[hasclass('oe_title')]" position="attributes">-->
+            <!--                <attribute name="invisible">1</attribute>-->
+            <!--            </xpath>-->
 
 
             <!--    full_name = fields.Char(-->
@@ -108,5 +111,21 @@
         <field name="view_mode">kanban,tree,form</field>
         <field name="view_id" ref="base.res_partner_kanban_view"/>
         <field name="domain">[('contact_type_selection', '=', 'manager')]</field>
+    </record>
+
+    <record id="action_open_my_profile_server" model="ir.actions.server">
+        <field name="name">Мій профіль</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Мій профіль',
+            'res_model': 'res.partner',
+            'view_mode': 'form',
+            'res_id': env.user.partner_id.id,
+            'target': 'current',
+            }
+        </field>
     </record>
 </odoo>

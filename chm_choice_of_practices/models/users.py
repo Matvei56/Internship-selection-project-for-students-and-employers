@@ -1,6 +1,7 @@
 from odoo import models, api
 import logging
 
+
 class ResUsers(models.Model):
     _inherit = 'res.users'
 

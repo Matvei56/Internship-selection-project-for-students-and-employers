@@ -1,0 +1,1322 @@
+<odoo>
+    <data noupdate="1">
+
+        <!-- 1 -->
+        <record id="edu_program_1" model="chm_choice_of_practices.education_program">
+            <field name="name">Будівництво та цивільна інженерія (проєкт 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">192 Будівництво та цивільна інженерія</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТЗБ</field>
+        </record>
+
+        <!-- 2 -->
+        <record id="edu_program_2" model="chm_choice_of_practices.education_program">
+            <field name="name">Фітнес та активне дозвілля (проєкт 2025 року)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">A7 Фізична культура і спорт</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-27</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">ФР</field>
+        </record>
+
+        <!-- 3 -->
+        <record id="edu_program_3" model="chm_choice_of_practices.education_program">
+            <field name="name">Фітнес та активне дозвілля (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">A7 Фізична культура і спорт</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Фітнес та активне дозвілля ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">ФР</field>
+        </record>
+
+        <!-- 4 -->
+        <record id="edu_program_4" model="chm_choice_of_practices.education_program">
+            <field name="name">Фітнес та велнес (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">A7 Фізична культура і спорт</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Фітнес та велнес ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">ФР</field>
+        </record>
+
+        <!-- 5 -->
+        <record id="edu_program_5" model="chm_choice_of_practices.education_program">
+            <field name="name">Аналітика суспільно-політичних процесів (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">B10 Філософія</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Аналітика суспільно-політичних процесів д.ф.н.</field>
+            <field name="stakeholder_reviews">Рецензії В10 Аналітика суспільно-політичних процесів</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">ФСН</field>
+        </record>
+
+        <!-- 6 -->
+        <record id="edu_program_6" model="chm_choice_of_practices.education_program">
+            <field name="name">Англійська мова та переклад (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">B11 Філологія (за спеціалізаціями)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП В11 Англійська мова та переклад 2025</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">ІФ</field>
+        </record>
+
+        <!-- 7 -->
+        <record id="edu_program_7" model="chm_choice_of_practices.education_program">
+            <field name="name">Дизайн середовища (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">B2 Дизайн (спеціалізація B2.03)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП ОПП Дизайн середовища</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">АД</field>
+        </record>
+
+        <!-- 8 -->
+        <record id="edu_program_8" model="chm_choice_of_practices.education_program">
+            <field name="name">Дизайн візуальних комунікацій (проєкт 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">B2 Дизайн (графічний)</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">АД</field>
+        </record>
+
+        <!-- 9 -->
+        <record id="edu_program_9" model="chm_choice_of_practices.education_program">
+            <field name="name">Дизайн (графічний дизайн) (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">B2 Дизайн</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Дизайн (графічний дизайн)</field>
+            <field name="stakeholder_reviews">Рецензії B2 Дизайн</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">АД</field>
+        </record>
+
+        <!-- 10 -->
+        <record id="edu_program_10" model="chm_choice_of_practices.education_program">
+            <field name="name">Економіка (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">C1 Економіка</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Економіка д.ф.н.
+НП Економіка з.ф.н.
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ЕОО</field>
+        </record>
+
+        <!-- 11 -->
+        <record id="edu_program_11" model="chm_choice_of_practices.education_program">
+            <field name="name">Економіка довкілля і природних ресурсів (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">C1 Економіка</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Економіка довкілля і природних ресурсів д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ЕОО</field>
+        </record>
+
+        <!-- 12 -->
+        <record id="edu_program_12" model="chm_choice_of_practices.education_program">
+            <field name="name">Економіка (PhD, набір 2025)</field>
+            <field name="degree">phd</field>
+            <field name="specialty">C1 Економіка</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Економіка д.ф.н.
+НП Економіка з.ф.н.
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">ЕОО</field>
+        </record>
+
+        <!-- 13 -->
+        <record id="edu_program_13" model="chm_choice_of_practices.education_program">
+            <field name="name">Психологія бізнесу та дизайн мислення (проєкт 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">C4 Психологія</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-01-09</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">Психології</field>
+        </record>
+
+        <!-- 14 -->
+        <record id="edu_program_14" model="chm_choice_of_practices.education_program">
+            <field name="name">Психологія та інтегральне мислення (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">C4 Психологія</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Психологія та інтегральне мислення ДФН
+НП Психологія та інтегральне мислення ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">Психології</field>
+        </record>
+
+        <!-- 15 -->
+        <record id="edu_program_15" model="chm_choice_of_practices.education_program">
+            <field name="name">Психологія бізнесу (проєкт 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">C4 Психологія</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-01-09</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">Психології</field>
+        </record>
+
+        <!-- 16 -->
+        <record id="edu_program_16" model="chm_choice_of_practices.education_program">
+            <field name="name">Психологія та інтегральне мислення (магістр, набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">C4 Психологія</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Психологія та інтегральне мислення ДФН
+НП Психологія та інтегральне мислення ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">Психології</field>
+        </record>
+        <record id="edu_program_101" model="chm_choice_of_practices.education_program">
+            <field name="name">Облік і оподаткування (проєкт 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D1 Облік і оподаткування</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ЕОО</field>
+        </record>
+
+        <record id="edu_program_102" model="chm_choice_of_practices.education_program">
+            <field name="name">Облік і оподаткування (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D1 Облік і оподаткування</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Облік і оподаткування д.ф.н.
+НП Облік і оподаткування з.ф.н.
+            ]]></field>
+            <field name="stakeholder_reviews">Реценція ОПП Облік і оподаткування</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ЕОО</field>
+        </record>
+
+        <record id="edu_program_103" model="chm_choice_of_practices.education_program">
+            <field name="name">Облік і оподаткування (проєкт 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D1 Облік і оподаткування</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ЕОО</field>
+        </record>
+
+        <record id="edu_program_104" model="chm_choice_of_practices.education_program">
+            <field name="name">Облік і оподаткування (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D1 Облік і оподаткування</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Облік і оподаткування д.ф.н.
+НП Облік і оподаткування з.ф.н.
+            ]]></field>
+            <field name="stakeholder_reviews">Рецензія ОПП Облік і оподаткування</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ЕОО</field>
+        </record>
+
+        <!-- D2 Фінанси -->
+
+        <record id="edu_program_105" model="chm_choice_of_practices.education_program">
+            <field name="name">Фінанси, банківська справа та страхування (проєкт 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D2 Фінанси, банківська справа, страхування та фондовий ринок</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ФБСС</field>
+        </record>
+
+        <record id="edu_program_106" model="chm_choice_of_practices.education_program">
+            <field name="name">Фінанси, банківська справа та страхування (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D2 Фінанси, банківська справа, страхування та фондовий ринок</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Фінанси, банківська справа та страхування д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ФБСС</field>
+        </record>
+
+        <record id="edu_program_107" model="chm_choice_of_practices.education_program">
+            <field name="name">Фінанси, банківська справа та страхування (проєкт 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D2 Фінанси, банківська справа, страхування та фондовий ринок</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ФБСС</field>
+        </record>
+
+        <record id="edu_program_108" model="chm_choice_of_practices.education_program">
+            <field name="name">Фінанси, банківська справа та страхування (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D2 Фінанси, банківська справа, страхування та фондовий ринок</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Фінанси, банківська справа та страхування д.ф.н.
+НП Фінанси, банківська справа та страхування з.ф.н.
+НП Фінанси, банківська справа та страхування дуал
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ФБСС</field>
+        </record>
+
+        <record id="edu_program_109" model="chm_choice_of_practices.education_program">
+            <field name="name">Фінанси, банківська справа та страхування (проєкт 2025)</field>
+            <field name="degree">phd</field>
+            <field name="specialty">D2 Фінанси, банківська справа, страхування та фондовий ринок</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">ФБСС</field>
+        </record>
+
+        <record id="edu_program_110" model="chm_choice_of_practices.education_program">
+            <field name="name">Фінанси, банківська справа та страхування (набір 2025)</field>
+            <field name="degree">phd</field>
+            <field name="specialty">D2 Фінанси, банківська справа, страхування та фондовий ринок</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Фінанси, банківська справа та страхування д.ф.н.
+НП Фінанси, банківська справа та страхування з.ф.н.
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">ФБСС</field>
+        </record>
+
+        <!-- D3 Менеджмент -->
+
+        <record id="edu_program_111" model="chm_choice_of_practices.education_program">
+            <field name="name">Менеджмент (проєкт 2025 року)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D3 Менеджмент</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-12-11</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МА</field>
+        </record>
+
+        <record id="edu_program_112" model="chm_choice_of_practices.education_program">
+            <field name="name">Управління персоналом та економіка праці (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D3 Менеджмент</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Управління персоналом та економіка праці ДФН
+НП Управління персоналом та економіка праці ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">УПБТ</field>
+        </record>
+
+        <record id="edu_program_113" model="chm_choice_of_practices.education_program">
+            <field name="name">Менеджмент (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D3 Менеджмент</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Менеджмент ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МА</field>
+        </record>
+
+        <record id="edu_program_114" model="chm_choice_of_practices.education_program">
+            <field name="name">Управління персоналом та економіка праці (магістр, набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D3 Менеджмент</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Управління персоналом та економіка праці ДФН
+НП Управління персоналом та економіка праці ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МА</field>
+        </record>
+
+        <record id="edu_program_115" model="chm_choice_of_practices.education_program">
+            <field name="name">Менеджмент (магістр, набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D3 Менеджмент</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Менеджмент ДФН
+НП Менеджмент ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МА</field>
+        </record>
+
+        <record id="edu_program_116" model="chm_choice_of_practices.education_program">
+            <field name="name">Менеджмент (PhD, набір 2025)</field>
+            <field name="degree">phd</field>
+            <field name="specialty">D3 Менеджмент</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Менеджмент ДФН
+НП Менеджмент ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">МА</field>
+        </record>
+        <record id="edu_program_201" model="chm_choice_of_practices.education_program">
+            <field name="name">Публічне управління та адміністрування (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D4 Публічне управління та адміністрування</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Публічне управління та адміністрування ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МА</field>
+        </record>
+
+        <record id="edu_program_202" model="chm_choice_of_practices.education_program">
+            <field name="name">Державна служба (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D4 Публічне управління та адміністрування</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Державна служба ДФН
+НП Державна служба ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МА</field>
+        </record>
+
+        <record id="edu_program_203" model="chm_choice_of_practices.education_program">
+            <field name="name">Публічне управління та адміністрування (магістр, набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D4 Публічне управління та адміністрування</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НР Публічне управління та адміністрування ДФН
+НП Публічне управління та адміністрування ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МА</field>
+        </record>
+
+        <record id="edu_program_204" model="chm_choice_of_practices.education_program">
+            <field name="name">Публічне управління та адміністрування (PhD, набір 2025)</field>
+            <field name="degree">phd</field>
+            <field name="specialty">D4 Публічне управління та адміністрування</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Публічне управління та адміністрування ДФН
+НП Публічне управління та адміністрування ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">МА</field>
+        </record>
+
+        <!-- D5 Маркетинг -->
+
+        <record id="edu_program_205" model="chm_choice_of_practices.education_program">
+            <field name="name">Бізнес-маркетинг та інтернет-комунікації (проєкт 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D5 Маркетинг</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МТЛ</field>
+        </record>
+
+        <record id="edu_program_206" model="chm_choice_of_practices.education_program">
+            <field name="name">Бізнес-маркетинг та інтернет-комунікації (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D5 Маркетинг</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Бізнес-маркетинг та інтернет-комунікації д.ф.н.
+НП Бізнес-маркетинг та інтернет-комунікації з.ф.н.
+НП Бізнес-маркетинг та інтернет-комунікації дуал.ф.н.
+            ]]></field>
+            <field name="stakeholder_reviews">
+                Рецензії Селеха Д.С., Жерибоа А.І., Красій Аліни
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МТЛ</field>
+        </record>
+
+        <record id="edu_program_207" model="chm_choice_of_practices.education_program">
+            <field name="name">Маркетинг (проєкт 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D5 Маркетинг</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МТЛ</field>
+        </record>
+
+        <record id="edu_program_208" model="chm_choice_of_practices.education_program">
+            <field name="name">Маркетинг (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D5 Маркетинг</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Маркетинг д.ф.н.
+НП Маркетинг з.ф.н.
+НП Маркетинг дуал.ф.н.
+            ]]></field>
+            <field name="stakeholder_reviews">Рецензія Пікуль Є.Ю.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">МТЛ</field>
+        </record>
+
+        <!-- D7 Торгівля -->
+
+        <record id="edu_program_209" model="chm_choice_of_practices.education_program">
+            <field name="name">Підприємництво та торгівля (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D7 Торгівля</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Підприємництво та торгівля ДФН
+НП Підприємництво та торгівля ЗФН
+            ]]></field>
+            <field name="stakeholder_reviews">
+                Рецензії-відгуки О.В.Глазкової, Г.К.Іванова, Віктора Беліченка
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ПТ</field>
+        </record>
+
+        <record id="edu_program_210" model="chm_choice_of_practices.education_program">
+            <field name="name">Підприємництво та торгівля (магістр, набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D7 Торгівля</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Підприємництво та торгівля ДФН
+НР Підприємництво та торгівля ЗФН
+Підприємництво та торгівля дистанційна ФН
+            ]]></field>
+            <field name="stakeholder_reviews">
+                Рецензії-відгуки О.В.Глазкової, Т.Е.Бєлялова, Г.К.Іванова
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ БЕА</field>
+            <field name="department">ПТ</field>
+        </record>
+
+        <!-- D8 Право -->
+
+        <record id="edu_program_211" model="chm_choice_of_practices.education_program">
+            <field name="name">Право (проєкт 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D8 Право</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-07</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ЮФ</field>
+            <field name="department">ППП</field>
+        </record>
+
+        <record id="edu_program_212" model="chm_choice_of_practices.education_program">
+            <field name="name">Право (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D8 Право</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Право ДФН
+НП Право ЗФН
+            ]]></field>
+            <field name="stakeholder_reviews">
+                Рецензії Володимира Бобруйка, Андрія Миланича, Лариси Житняк
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ЮФ</field>
+            <field name="department">ППП</field>
+        </record>
+
+        <record id="edu_program_213" model="chm_choice_of_practices.education_program">
+            <field name="name">Кримінальна юстиція (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">D8 Право</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Кримінальна юстиція ДФН
+НП Кримінальна юстиція ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ЮФ</field>
+            <field name="department">КПП</field>
+        </record>
+
+        <record id="edu_program_214" model="chm_choice_of_practices.education_program">
+            <field name="name">Кримінальна юстиція (проєкт 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D8 Право</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-07</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ЮФ</field>
+            <field name="department">КПП</field>
+        </record>
+
+        <record id="edu_program_215" model="chm_choice_of_practices.education_program">
+            <field name="name">Адміністративна та цивільна юстиція (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D8 Право</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Адміністративна та цивільна юстиція ДФН
+НП Адміністративна та цивільна юстиція ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ЮФ</field>
+            <field name="department">ППП</field>
+        </record>
+
+        <record id="edu_program_216" model="chm_choice_of_practices.education_program">
+            <field name="name">Кримінальна юстиція (магістр, набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">D8 Право</field>
+            <field name="status">approved</field>
+            <field name="curriculum"><![CDATA[
+НП Кримінальна юстиція ДФН
+НП Кримінальна юстиція ЗФН
+            ]]></field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ЮФ</field>
+            <field name="department">КПП</field>
+        </record>
+
+        <!-- E2 Екологія -->
+
+        <record id="edu_program_217" model="chm_choice_of_practices.education_program">
+            <field name="name">Екологія (набір 2025)</field>
+            <field name="degree">bachelor</field>
+            <field name="specialty">E2 Екологія</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Екологія ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">ХТЕ</field>
+        </record>
+
+        <record id="edu_program_218" model="chm_choice_of_practices.education_program">
+            <field name="name">Екологічна безпека (набір 2025)</field>
+            <field name="degree">master</field>
+            <field name="specialty">E2 Екологія</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Екологічна безпека ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">ХТЕ</field>
+        </record>
+        <record id="edu_program_f2_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">F2 Інженерія програмного забезпечення</field>
+            <field name="name">Інженерія програмного забезпечення (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F2 Інженерія програмного забезпечення бакалавр 2025
+                НП F2 Інженерія програмного забезпечення бакалавр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">ІТПІ</field>
+        </record>
+
+        <record id="edu_program_f2_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">F2 Інженерія програмного забезпечення</field>
+            <field name="name">Інженерія програмного забезпечення (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F2 Інженерія програмного забезпечення магістр 2025
+                НП F2 Інженерія програмного забезпечення магістр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">ІТПІ</field>
+        </record>
+
+        <record id="edu_program_f2_phd_project" model="chm_choice_of_practices.education_program">
+            <field name="degree">phd</field>
+            <field name="specialty">F2 Інженерія програмного забезпечення</field>
+            <field name="name">Інженерія програмного забезпечення</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-14</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">ІТПІ</field>
+        </record>
+
+        <record id="edu_program_f2_phd_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">phd</field>
+            <field name="specialty">F2 Інженерія програмного забезпечення</field>
+            <field name="name">Інженерія програмного забезпечення (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F2 Інженерія програмного забезпечення phd 2025 очна
+                НП F2 Інженерія програмного забезпечення phd 2025 заочна
+            </field>
+            <field name="stakeholder_reviews">Рецензії ОНП Інженерія програмного забезпечення</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">ІТПІ</field>
+        </record>
+
+        <!-- F3 Комп'ютерні науки -->
+
+        <record id="edu_program_f3_phd_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">phd</field>
+            <field name="specialty">F3 Комп'ютерні науки</field>
+            <field name="name">Комп'ютерні науки (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F3 Комп'ютерні науки phd 2025 очна
+                НП F3 Комп'ютерні науки phd 2025 заочна
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">ІКС</field>
+        </record>
+
+        <!-- F5 Кібербезпека -->
+
+        <record id="edu_program_f5_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">F5 Кібербезпека та захист інформації</field>
+            <field name="name">Кібербезпека (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F5 Кібербезпека бакалавр 2025 денна
+                НП F5 Кібербезпека бакалавр 2025 заочна
+            </field>
+            <field name="stakeholder_reviews">наказ про додаткову атестацію F5</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">КіММ</field>
+        </record>
+
+        <record id="edu_program_f5_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">F5 Кібербезпека та захист інформації</field>
+            <field name="name">Кібербезпека (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F5 Кібербезпека магістр 2025 денна
+                НП F5 Кібербезпека магістр 2025 заочна
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">КіММ</field>
+        </record>
+
+        <record id="edu_program_f5_phd_project" model="chm_choice_of_practices.education_program">
+            <field name="degree">phd</field>
+            <field name="specialty">F5 Кібербезпека та захист інформації</field>
+            <field name="name">Кібербезпека та захист інформації (проєкт 2025)</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-10-25</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">КіММ</field>
+        </record>
+
+        <record id="edu_program_f5_phd_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">phd</field>
+            <field name="specialty">F5 Кібербезпека та захист інформації</field>
+            <field name="name">Кібербезпека та захист інформації (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F5 Кібербезпека та захист інформації phd 2025 очна
+                НП F5 Кібербезпека та захист інформації phd 2025 заочна
+            </field>
+            <field name="stakeholder_reviews">Рецензії ОНП Кібербезпека та захист інформації</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">КіММ</field>
+        </record>
+
+        <!-- F7 Комп’ютерна інженерія -->
+
+        <record id="edu_program_f7_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">F7 Комп’ютерна інженерія</field>
+            <field name="name">Комп'ютерна інженерія (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F7 Комп'ютерна інженерія бакалавр 2025 денна
+                НП F7 Комп'ютерна інженерія бакалавр 2025 дуал
+                НП F7 Комп'ютерна інженерія бакалавр 2025 заочна
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">ІКС</field>
+        </record>
+
+        <record id="edu_program_f7_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">F7 Комп’ютерна інженерія</field>
+            <field name="name">Комп'ютерна інженерія (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП F7 Комп'ютерна інженерія магістр 2025 денна
+                НП F7 Комп'ютерна інженерія магістр 2025 заочна
+                НП F7 Комп'ютерна інженерія магістр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">ІКС</field>
+        </record>
+
+        <!-- G11 Машинобудування -->
+
+        <record id="edu_program_g11_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G11 Машинобудування</field>
+            <field name="name">Галузеве машинобудування (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП ОПП Галузеве машинобудування д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">АТГМ</field>
+        </record>
+
+        <record id="edu_program_g11_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G11 Машинобудування</field>
+            <field name="name">Галузеве машинобудування (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Галузеве машинобудування д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">АТГМ</field>
+        </record>
+
+        <record id="edu_program_g11_phd_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">phd</field>
+            <field name="specialty">G11 Машинобудування</field>
+            <field name="name">Галузеве машинобудування (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Галузеве машинобудування д.ф.н.
+                НП Галузеве машинобудування з.ф.н.
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">АТГМ</field>
+        </record>
+        <!-- G13 Харчові технології -->
+
+        <record id="edu_program_g13_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G13 Харчові технології</field>
+            <field name="name">Харчові технології та інженерія (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Харчові технології та інженерія ДФН
+                НП Харчові технології та інженерія ЗФН
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">ХТЕ</field>
+        </record>
+
+        <record id="edu_program_g13_master_project" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G13 Харчові технології</field>
+            <field name="name">Харчові технології (проєкт 2025 року)</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-06</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">ХТЕ</field>
+        </record>
+
+        <record id="edu_program_g13_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G13 Харчові технології</field>
+            <field name="name">Харчові технології (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Харчові технології ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">ХТЕ</field>
+        </record>
+
+        <!-- G14 Деревообробні технології -->
+
+        <record id="edu_program_g14_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G14 Деревообробні та меблеві технології</field>
+            <field name="name">Деревообробні та меблеві технології (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Деревообробні та меблеві технології д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТМБД</field>
+        </record>
+
+        <record id="edu_program_g14_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G14 Деревообробні та меблеві технології</field>
+            <field name="name">Деревообробні та меблеві технології (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Деревообробні та меблеві технології д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТМБД</field>
+        </record>
+
+        <!-- G17 Архітектура -->
+
+        <record id="edu_program_g17_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G17 Архітектура та містобудування</field>
+            <field name="name">Архітектура та містобудування (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП ОПП Архітектура та містобудування</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">АД</field>
+        </record>
+
+        <!-- G18 Геодезія -->
+
+        <record id="edu_program_g18_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G18 Геодезія та землеустрій</field>
+            <field name="name">Геодезія та землеустрій (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Геодезія та землеустрій д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ГКЗ</field>
+        </record>
+
+        <record id="edu_program_g18_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G18 Геодезія та землеустрій</field>
+            <field name="name">Геодезія та землеустрій (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Геодезія та землеустрій д.ф.н.
+                НП Геодезія та землеустрій дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ГКЗ</field>
+        </record>
+
+        <!-- G19 Будівництво -->
+
+        <record id="edu_program_g19_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G19 Будівництво та цивільна інженерія</field>
+            <field name="name">Будівництво та цивільна інженерія (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Будівництво та цивільна інженерія д.ф.н.
+                НП Будівництво та цивільна та інженерія з.ф.н.
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТЗБ</field>
+        </record>
+
+        <record id="edu_program_g19_master_project" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G19 Будівництво та цивільна інженерія</field>
+            <field name="name">Будівництво та цивільна інженерія (проєкт 2025)</field>
+            <field name="status">project</field>
+            <field name="start_date">2024-11-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТЗБ</field>
+        </record>
+
+        <record id="edu_program_g19_master_eng_project" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G19 Будівництво та цивільна інженерія</field>
+            <field name="name">CONSTRUCTION AND CIVIL ENGINEERING</field>
+            <field name="status">project</field>
+            <field name="stakeholder_reviews">WP3-EU expert qustionaire CPNU</field>
+            <field name="start_date">2024-11-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТЗБ</field>
+        </record>
+
+        <record id="edu_program_g19_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G19 Будівництво та цивільна інженерія</field>
+            <field name="name">Будівництво та цивільна інженерія (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Будівництво та цивільна інженерія д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТЗБ</field>
+        </record>
+
+        <!-- G3 Електрична інженерія -->
+
+        <record id="edu_program_g3_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G3 Електрична інженерія</field>
+            <field name="name">Електроенергетика, електротехніка та електромеханіка (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП G3 Електроенергетика бакалавр 2025 денна
+                НП G3 Електроенергетика бакалавр 2025 заочна
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">ЕІ ІВТ</field>
+        </record>
+
+        <record id="edu_program_g3_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">G3 Електрична інженерія</field>
+            <field name="name">Електроенергетика, електротехніка та електромеханіка (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП G3 Електроенергетика магістр 2025 денна
+                НП G3 Електроенергетика магістр 2025 заочна
+                НП G3 Електроенергетика магістр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">ЕІ ІВТ</field>
+        </record>
+
+        <record id="edu_program_g3_phd_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">phd</field>
+            <field name="specialty">G3 Електрична інженерія</field>
+            <field name="name">ОНП Електроенергетика, електротехніка та електромеханіка (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП G3 phd 2025 очна
+                НП G3 phd 2025 заочна
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">Аспірантура</field>
+            <field name="department">ЕІ ІВТ</field>
+        </record>
+
+        <!-- G5 Електроніка -->
+
+        <record id="edu_program_g5_bachelor_tel_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G5 Електроніка, електронні комунікації</field>
+            <field name="name">Телекомунікації та радіотехніка (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП G5 Телекомунікації бакалавр 2025</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">РТВС</field>
+        </record>
+
+        <record id="edu_program_g5_bachelor_elec_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G5 Електроніка, електронні комунікації</field>
+            <field name="name">Електроніка роботизованих систем та комплексів (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП G5 Електроніка бакалавр 2025</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ЕІТ</field>
+            <field name="department">ЕІ ІВТ</field>
+        </record>
+
+        <!-- G9 Прикладна механіка -->
+
+        <record id="edu_program_g9_bachelor_project" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G9 Прикладна механіка</field>
+            <field name="name">Комп'ютерно-автоматизовані технології машинобудування (проєкт 2025)</field>
+            <field name="status">project</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТМБД</field>
+        </record>
+
+        <record id="edu_program_g9_bachelor_welding_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">G9 Прикладна механіка</field>
+            <field name="name">Технології та устаткування зварювання (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Технології та устаткування зварювання д.ф.н.</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">ТЗБ</field>
+        </record>
+        <!-- H1 Агрономія — бакалавр -->
+        <record id="prog_h1_agronomy_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">H1</field>
+            <field name="specialty">Агрономія</field>
+            <field name="name">Агрономія (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Н1 Агрономія бакалавр 2025
+                НП Н1 Агрономія бакалавр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">АТЛГ</field>
+        </record>
+
+        <!-- H1 Агрономія — магістр -->
+        <record id="prog_h1_agronomy_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">H1</field>
+            <field name="specialty">Агрономія</field>
+            <field name="name">Агрономія (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Н1 Агрономія магістр 2025
+                НП Н1 Агрономія магістр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">АТЛГ</field>
+        </record>
+
+        <!-- H4 Лісове господарство — бакалавр -->
+        <record id="prog_h4_forestry_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">H4</field>
+            <field name="specialty">Лісове господарство</field>
+            <field name="name">Лісове господарство (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Н4 Лісове господарство бакалавр 2025
+                НП Н4 Лісове господарство бакалавр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">АТЛГ</field>
+        </record>
+
+        <!-- H4 Лісове господарство — магістр -->
+        <record id="prog_h4_forestry_master_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">master</field>
+            <field name="specialty">H4</field>
+            <field name="specialty">Лісове господарство</field>
+            <field name="name">Лісове господарство (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Н4 Лісове господарство магістр 2025
+                НП Н4 Лісове господарство магістр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">АТЛГ</field>
+        </record>
+
+        <!-- I10 Соціальна робота — бакалавр -->
+        <record id="prog_i10_social_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">I10</field>
+            <field name="specialty">Соціальна робота та консультування</field>
+            <field name="name">Соціальна робота (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Соціальна робота ДФН
+                Соціальна робота дуальна ФН
+                НП Соціальна робота ЗФН
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">СР</field>
+        </record>
+
+        <!-- I7 Фізична терапія -->
+        <record id="prog_i7_therapy_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">I7</field>
+            <field name="specialty">Терапія та реабілітація</field>
+            <field name="name">Фізична терапія, ерготерапія</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Фізична терапія, ерготерапія ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ФСТОР</field>
+            <field name="department">ФР</field>
+        </record>
+
+        <!-- J3 Туризм — бакалавр -->
+        <record id="prog_j3_tourism_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">J3</field>
+            <field name="specialty">Туризм та рекреація</field>
+            <field name="name">Туризм (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП J3 Туризм бакалавр 2025
+                НП J3 Туризм бакалавр 2025 дуал
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ПГН</field>
+            <field name="department">Туризму</field>
+        </record>
+
+        <!-- J8 Автомобільний транспорт — бакалавр -->
+        <record id="prog_j8_transport_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">J8</field>
+            <field name="specialty">Автомобільний транспорт</field>
+            <field name="name">Автомобільний транспорт (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">
+                НП Автомобільний транспорт д.ф.н.
+                НП Автомобільний транспорт з.ф.н.
+                НП Автомобільний транспорт дуал.ф.н.
+            </field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ННІ ІВБ</field>
+            <field name="department">АТГМ</field>
+        </record>
+
+        <!-- K9 Правоохоронна діяльність -->
+        <record id="prog_k9_law_enforcement_bachelor_2025" model="chm_choice_of_practices.education_program">
+            <field name="degree">bachelor</field>
+            <field name="specialty">K9</field>
+            <field name="specialty">Правоохоронна діяльність</field>
+            <field name="name">Правоохоронна діяльність (набір 2025)</field>
+            <field name="status">approved</field>
+            <field name="curriculum">НП Правоохоронна діяльність ДФН</field>
+            <field name="start_date">2025-09-01</field>
+            <field name="admission_year">2025</field>
+            <field name="faculty">ЮФ</field>
+            <field name="department">ПДЗПД</field>
+        </record>
+
+
+    </data>
+</odoo>

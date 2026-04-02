@@ -104,6 +104,20 @@ class PracticeAgreement(models.Model):
             else:
                 rec.state = 'active'
 
+    @api.constrains('state', 'enterprises_id')
+    def _check_only_one_active_agreement(self):
+        for record in self:
+            if record.state == 'active' and record.enterprises_id:
+                active_count = self.search_count([
+                    ('enterprises_id', '=', record.enterprises_id.id),
+                    ('state', '=', 'active'),
+                    ('id', '!=', record.id),
+                ])
+                if active_count > 0:
+                    raise ValidationError(
+                        'У підприємства може бути тільки одна активна угода!'
+                    )
+
     @api.model
     def create(self, vals_list):
         records = super().create(vals_list)

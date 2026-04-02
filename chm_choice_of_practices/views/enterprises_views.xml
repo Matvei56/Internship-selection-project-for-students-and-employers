@@ -57,8 +57,7 @@
 
                         </page>
                         <page string="Угоди">
-                            <field name="practice_agreement_ids"
-                            >
+                            <field name="practice_agreement_ids">
                                 <tree decoration-muted="state=='expired'"
                                       decoration-danger="state=='inactive'">
                                     <field name="display_name" readonly="1"/>
@@ -68,6 +67,23 @@
                                     <field name="enterprises_id"/>
                                     <field name="is_unlimited"/>
                                     <field name="is_auto_prolongation"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Освітні програми">
+                            <label for="education_program_count"/>
+                            <field name="education_program_count"/>
+                            <field name="education_program_line_ids" required="1">
+                                <tree string="Освітні програми" editable="bottom">
+                                    <field name="education_program_id"/>
+                                    <field name="name"/>
+                                    <field name="degree"/>
+                                    <field name="specialty"/>
+                                    <field name="status"/>
+                                    <field name="admission_year"/>
+                                    <field name="faculty"/>
+                                    <field name="department"/>
+                                    <field name="start_date"/>
                                 </tree>
                             </field>
                         </page>
@@ -108,7 +124,6 @@
                 <field name="edrpou" groups="chm_choice_of_practices.group_practice_manager"/>
                 <field name="practice_type"/>
                 <field name="address"/>
-                <field name="cite" groups="chm_choice_of_practices.group_practice_manager"/>
                 <field name="field_of_activity"/>
                 <field name="practice_request_count" groups="chm_choice_of_practices.group_practice_manager"/>
             </tree>

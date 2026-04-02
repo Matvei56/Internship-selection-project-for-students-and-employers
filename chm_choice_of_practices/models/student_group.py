@@ -6,8 +6,8 @@ class StudentGroup(models.Model):
     _description = 'Модель груп студентів'
 
     name = fields.Char(string="Назва", compute="_compute_name", store=True)
-    abbreviation = fields.Char(string="Абревіатура")
-    number = fields.Char(string="Номер")
+    abbreviation = fields.Char(string="Абревіатура", required=True)
+    number = fields.Char(string="Номер", required=True)
     full_name = fields.Char(string="Повна назва")
 
     @api.depends('abbreviation', 'number')

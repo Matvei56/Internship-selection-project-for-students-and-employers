@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class Enterprises(models.Model):
@@ -27,6 +28,12 @@ class Enterprises(models.Model):
 
     practice_agreement_ids = fields.One2many('chm_choice_of_practices.practice_agreement', 'enterprises_id',
                                              string='Угоди')
+    active_practice_agreement_id = fields.Many2one(
+        'chm_choice_of_practices.practice_agreement',
+        string='Активна угода',
+        compute='_compute_active_practice_agreement',
+        store=True
+    )
     practice_request_count = fields.Integer(
         string='Усьго заяв до підприємства', compute='_compute_practice_request_count', store=False)
     enterprises_count = fields.Integer(
@@ -37,6 +44,7 @@ class Enterprises(models.Model):
     approved_request_count = fields.Integer(compute="_compute_practice_request_counts", string="Схвалені")
     rejected_request_count = fields.Integer(compute="_compute_practice_request_counts", string="Відхилені")
     needs_edits_request_count = fields.Integer(compute="_compute_practice_request_counts", string="Потребують правок")
+    education_program_count = fields.Integer(compute="_compute_education_program_count", string="Освітні програми")
 
     enterprises_ids = fields.Many2many(
         'chm_choice_of_practices.enterprises',
@@ -52,6 +60,16 @@ class Enterprises(models.Model):
         compute="_compute_current_user",
         store=False
     )
+    education_program_line_ids = fields.One2many('chm_choice_of_practices.education_program_line', 'enterprises_id',
+                                            string='Освітні програми')
+
+    @api.depends('practice_agreement_ids.state')
+    def _compute_active_practice_agreement(self):
+        for record in self:
+            active = record.practice_agreement_ids.filtered(
+                lambda r: r.state == 'active'
+            )
+            record.active_practice_agreement_id = active[:1].id if active else False
 
     @api.depends('practice_request_ids')
     def _compute_practice_request_counts(self):
@@ -87,6 +105,11 @@ class Enterprises(models.Model):
         for record in self:
             record.practice_request_count = len(record.practice_request_ids)
 
+    @api.depends('education_program_line_ids')
+    def _compute_education_program_count(self):
+        for record in self:
+            record.education_program_count = len(record.education_program_line_ids)
+
     @api.depends('enterprises_ids')
     def _compute_enterprises_count(self):
         for record in self:
@@ -99,19 +122,19 @@ class Enterprises(models.Model):
             rec.enterprises_ids = all_enterprises
 
     def actions_create_request(self):
-        self.env.user.notify_info(message='Будь ласка заповніть всі поля про себе', title='Службове повідомлення')
+        if self.state != 'active':
+            raise ValidationError('Не можна створити заявку: підприємство не активне!')
+
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Створити заяву',
-            'res_model': 'chm_choice_of_practices.practice_request',
+            'name': 'Перевірка даних',
+            'res_model': 'partner.check.wizard',
             'view_mode': 'form',
-            'view_id': self.env.ref('chm_choice_of_practices.view_form_practice_request').id,
-            'target': 'current',
+            'target': 'new',
             'context': {
-                'default_state': 'new',
-                'default_student_id': self.env.user.partner_id.id,
+                'default_partner_id': self.env.user.partner_id.id,
                 'default_enterprises_id': self.id,
-            },
+            }
         }
 
     @api.onchange('practice_agreement_ids')
@@ -125,6 +148,14 @@ class Enterprises(models.Model):
 
             rec.state = 'active' if active_exists else 'inactive'
 
+    @api.constrains('enterprises_id')
+    def _check_enterprise_active(self):
+        for record in self:
+            if record.enterprises_id and record.enterprises_id.state != 'active':
+                raise ValidationError(
+                    'Не можна створити заявку: підприємство не активне!'
+                )
+
     @api.model
     def create(self, vals):
         record = super().create(vals)
@@ -132,4 +163,12 @@ class Enterprises(models.Model):
         all_enterprises = self.env['chm_choice_of_practices.enterprises'].search([])
         record.enterprises_ids = [(6, 0, all_enterprises.ids)]
 
+        enterprise = self.env['chm_choice_of_practices.enterprises'].browse(
+            vals.get('enterprises_id')
+        )
+
+        if enterprise and enterprise.state != 'active':
+            raise ValidationError(
+                'Не можна створити заявку: підприємство не активне!'
+            )
         return record

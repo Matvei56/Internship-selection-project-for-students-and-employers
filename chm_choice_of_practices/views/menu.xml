@@ -10,6 +10,9 @@
         <menuitem id="menu_practice_request1" sequence="3" name="Заяви"
                   action="chm_choice_of_practices.action_practice_request"
                   groups="chm_choice_of_practices.group_practice_manager"/>
+        <menuitem id="menu_placement_practical" sequence="3" name="Направлення"
+                  action="chm_choice_of_practices.action_placement_practical"
+                  groups="chm_choice_of_practices.group_practice_manager"/>
         <menuitem id="menu_practice_request_for_student" sequence="3" name="Мої заяви"
                   action="chm_choice_of_practices.action_practice_request"
                   groups="chm_choice_of_practices.group_student_only"/>
@@ -28,10 +31,14 @@
                   groups="chm_choice_of_practices.group_practice_manager">
             <menuitem id="menu_student_group" sequence="2" name="Групи"
                       action="chm_choice_of_practices.action_student_group"/>
+            <menuitem id="menu_edu_programs" sequence="1" name="Освітні програми"
+                      action="chm_choice_of_practices.action_edu_programs"/>
         </menuitem>
         <menuitem id="menu_res_users" sequence="6" name="Користувачі"
                   groups="chm_choice_of_practices.group_administrator"
                   action="base.action_res_users"/>
+        <menuitem id="menu_my_profile" sequence="7" name="Мій профіль"
+                  action="action_open_my_profile_server" />
 
     </menuitem>
 
