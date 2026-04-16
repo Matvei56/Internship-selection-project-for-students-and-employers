@@ -10,6 +10,7 @@
                             <field name="abbreviation"/>
                             <field name="number"/>
                             <field name="full_name"/>
+                            <field name="education_program_program_id"/>
                         </group>
                     </group>
                 </sheet>
@@ -25,6 +26,7 @@
                 <field name="abbreviation"/>
                 <field name="number"/>
                 <field name="full_name"/>
+                <field name="education_program_program_id"/>
             </tree>
         </field>
     </record>

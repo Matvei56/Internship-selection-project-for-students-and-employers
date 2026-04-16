@@ -37,6 +37,18 @@
                     </group>
 
                     <notebook>
+                        <page string="Пов'язані групи">
+
+                            <field name="student_group_ids">
+                                <tree editable="bottom">
+                                    <field name="abbreviation"/>
+                                    <field name="number"/>
+                                    <field name="full_name"/>
+
+                                </tree>
+                            </field>
+
+                        </page>
 
                         <page string="Навчальні плани">
 

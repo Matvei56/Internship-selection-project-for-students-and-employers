@@ -13,7 +13,9 @@ class EducationProgram(models.Model):
     ], string='Освітній ступінь')
 
     specialty = fields.Char(string='Спеціальність', )
-
+    student_group_ids = fields.One2many(comodel_name='chm_choice_of_practices.student_group',
+                                        inverse_name='education_program_program_id',
+                                        string='Групи')
     status = fields.Selection([
         ('project', 'Проєкт'),
         ('approved', 'Затверджено'),

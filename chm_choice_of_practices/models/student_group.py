@@ -9,6 +9,8 @@ class StudentGroup(models.Model):
     abbreviation = fields.Char(string="Абревіатура", required=True)
     number = fields.Char(string="Номер", required=True)
     full_name = fields.Char(string="Повна назва")
+    education_program_program_id = fields.Many2one(comodel_name='chm_choice_of_practices.education_program',
+                                                   string="Освітня програма")
 
     @api.depends('abbreviation', 'number')
     @api.onchange('abbreviation', 'number')
