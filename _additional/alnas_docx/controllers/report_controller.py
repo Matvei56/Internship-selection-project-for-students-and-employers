@@ -1,5 +1,5 @@
 import json
-from werkzeug.urls import url_decode, url_quote
+from werkzeug.urls import url_decode
 
 from odoo.http import (
     content_disposition,
@@ -8,27 +8,13 @@ from odoo.http import (
     serialize_exception as _serialize_exception,
 )
 
-from odoo.tools import html_escape, ustr
+from odoo.tools import html_escape
 from odoo.tools.safe_eval import safe_eval, time
 
 from odoo.addons.web.controllers.main import ReportController
-from odoo.addons.http_routing.models.ir_http import slugify
 
 
 class DocxReportController(ReportController):
-    def _prepare_filepart(self, doc_ids, report, allowed_company_ids):
-        """Prepare filename for report"""
-        if doc_ids:
-            doc_ids_len = len(doc_ids)
-            if doc_ids_len > 1:
-                model_id = request.env["ir.model"]._get(report.model)
-                return "{} (x{})".format(model_id.name, doc_ids_len)
-            report_name = report.print_report_name
-            if doc_ids_len == 1 and report_name:
-                obj = request.env[report.model].with_context(allowed_company_ids=allowed_company_ids).browse(doc_ids)
-                return safe_eval(report_name, {"object": obj, "time": time})
-        return "report"
-
     @route()
     def report_routes(self, reportname, docids=None, converter=None, **data):
         if converter == "docx":
@@ -45,18 +31,10 @@ class DocxReportController(ReportController):
                 context.update(data["context"])
                 
             docx_files = report.with_context(**context)._render_docx(reportname, docids, data=data)
-            filepart = self._prepare_filepart(docids, report, (context.get('allowed_company_ids') or request.env.context.get('allowed_company_ids')))
-            # Готовим имя файла.
-            full_file_name = self._get_filename_by_report_type(report,filepart)
-
+            
             if report.docx_merge_mode == 'composer':
                 httpheaders = [
                     ('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'),
-                    ("Content-Length", len(docx_files)),
-                    (
-                        "Content-Disposition",
-                        self.alnas_content_disposition('attachment',full_file_name)
-                    ),
                 ]
             elif report.docx_merge_mode == 'zip':
                 httpheaders = [
@@ -65,13 +43,9 @@ class DocxReportController(ReportController):
             else:
                 httpheaders = [
                     ('Content-Type', 'application/pdf'),
-                    ("Content-Length", len(docx_files)),
-                    (
-                        "Content-Disposition",
-                        self.alnas_content_disposition('inline',full_file_name)
-                    ),
                 ]
             return request.make_response(docx_files, headers=httpheaders)
+        
         return super().report_routes(reportname, docids, converter, **data)
 
     @route()
@@ -128,22 +102,7 @@ class DocxReportController(ReportController):
             se = _serialize_exception(e)
             error = {"code": 200, "message": "Odoo Server Error", "data": se}
             return request.make_response(html_escape(json.dumps(error)))
-
-    def alnas_content_disposition(self,type_filename,filename):
-        """
-        Аналог метода from odoo.http import content_disposition.
-        Отличие заключается в следующем:
-        1. Наличие **контроля режима открытия файла** ('inline' для просмотра или 'attachment' для скачивания).
-
-        :param type_filename: Режим отображения файла ('inline' или 'attachment').
-        :param filename: Исходное имя файла (может содержать символы Unicode).
-        :return: Полностью сформированная строка для HTTP-заголовка 'Content-Disposition'.
-        """
-        filename = ustr(filename)
-        escaped = url_quote(filename, safe='')
-
-        return f"{type_filename};" + "filename*=UTF-8''%s" % escaped
-
+        
     def _get_filename_by_report_type(self, report, name):
         if report.docx_merge_mode == 'composer':
             filename = "%s.%s" % (name, "docx")

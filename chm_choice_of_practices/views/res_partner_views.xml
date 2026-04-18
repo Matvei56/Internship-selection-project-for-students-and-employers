@@ -14,6 +14,9 @@
             <xpath expr="//field[@name='mobile']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
             <xpath expr="//field[@name='parent_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
@@ -46,7 +49,11 @@
                 <field name="name" readonly="1" class="oe_read_only"/>
             </xpath>
             <xpath expr="//span[@name='address_name']" position="before">
-                <field name="student_group_id"/>
+                <field name="student_group_id"
+                       attrs="{'invisible': [('contact_type_selection', '!=', 'student')]}"/>
+
+                <field name="department_id"
+                       attrs="{'invisible': [('contact_type_selection', '!=', 'manager')]}"/>
             </xpath>
             <!--            <xpath expr="//div[hasclass('oe_title')]" position="attributes">-->
             <!--                <attribute name="invisible">1</attribute>-->
@@ -55,7 +62,7 @@
 
             <!--    full_name = fields.Char(-->
             <xpath expr="//notebook" position="after">
-                <notebook groups="chm_choice_of_practices.group_practice_manager">
+                <notebook groups="chm_choice_of_practices.group_administrator">
                     <page string="Заяви на практику">
                         <group>
                             <field name="practice_request_ids">

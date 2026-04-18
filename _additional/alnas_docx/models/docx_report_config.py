@@ -97,10 +97,8 @@ class DocxReportConfig(models.Model):
     @api.constrains("report_docx_template_filename")
     def _check_report_docx_template_filename(self):
         for rec in self:
-            if rec.report_docx_template_filename:
-                filename = rec.report_docx_template_filename.strip()
-                if not filename.lower().endswith(".docx"):
-                    raise UserError("Please upload a DOCX template.")
+            if not rec.report_docx_template_filename.endswith(".docx"):
+                raise UserError("Please upload a DOCX template.")
 
     def _action_publish(self):
         for record in self:

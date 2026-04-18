@@ -1,4 +1,4 @@
-from odoo import models, api
+from odoo import models, fields, api
 import logging
 
 
@@ -30,7 +30,7 @@ class ResUsers(models.Model):
             groups = user.groups_id
             if self.env.ref('chm_choice_of_practices.group_administrator') in groups:
                 user.partner_id.contact_type_selection = 'admin'
-            elif self.env.ref('chm_choice_of_practices.group_practice_manager') in groups:
+            elif self.env.ref('chm_choice_of_practices.group_head_of_department') in groups:
                 user.partner_id.contact_type_selection = 'manager'
             elif self.env.ref('chm_choice_of_practices.group_student') in groups:
                 user.partner_id.contact_type_selection = 'student'

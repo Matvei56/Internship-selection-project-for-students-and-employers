@@ -28,7 +28,7 @@
                         <group>
                             <!--                            <field name="partner_id"/>-->
                             <field name="edrpou"/>
-                            <field name="partner_id" readonly="1"/>
+                            <field name="partner_id" readonly="0"/>
                             <field name="address"/>
                             <field name="practice_type"/>
                             <field name="cite"/>
@@ -37,7 +37,8 @@
                         </group>
                     </group>
 
-                    <notebook groups="chm_choice_of_practices.group_practice_manager">
+                    <notebook
+                            groups="chm_choice_of_practices.group_administrator,chm_choice_of_practices.group_staff_member_career">
                         <page string="Заяви">
                             <label for="practice_request_count"/>
                             <field name="practice_request_count"/>
@@ -118,14 +119,14 @@
             <tree string="Підприємства"
                   decoration-danger="state=='inactive'">
                 <field name="name"/>
-                <field name="state" groups="chm_choice_of_practices.group_practice_manager"/>
+                <field name="state" groups="chm_choice_of_practices.group_administrator"/>
                 <field name="partner_id" string="Відповідвльний"
-                       groups="chm_choice_of_practices.group_practice_manager"/>
-                <field name="edrpou" groups="chm_choice_of_practices.group_practice_manager"/>
+                       groups="chm_choice_of_practices.group_administrator"/>
+                <field name="edrpou" groups="chm_choice_of_practices.group_administrator"/>
                 <field name="practice_type"/>
                 <field name="address"/>
                 <field name="field_of_activity"/>
-                <field name="practice_request_count" groups="chm_choice_of_practices.group_practice_manager"/>
+                <field name="practice_request_count" groups="chm_choice_of_practices.group_administrator"/>
             </tree>
         </field>
     </record>

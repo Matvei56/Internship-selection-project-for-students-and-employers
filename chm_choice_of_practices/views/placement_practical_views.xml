@@ -19,12 +19,12 @@
                         <group>
                             <field name="enterprises_id"/>
                             <field name="head_of_practice" readonly="1"/>
+                            <field name="student_id"/>
                         </group>
 
                         <group>
                             <field name="active_practice_agreement_id" readonly="1"/>
                             <field name="number" readonly="1"/>
-                            <field name="date_start_agreement" readonly="1"/>
                         </group>
                     </group>
 
@@ -32,6 +32,11 @@
                         <page string="Деталі">
                             <group>
                                 <field name="enterprises_id" readonly="1"/>
+                                <field name="date_start_agreement" readonly="0"/>
+                                <field name="date_end_agreement" readonly="0"/>
+                                <field name="date_start_practical"/>
+                                <field name="date_end_practical"/>
+                                <field name="practice_request_id"/>
                             </group>
                         </page>
                     </notebook>

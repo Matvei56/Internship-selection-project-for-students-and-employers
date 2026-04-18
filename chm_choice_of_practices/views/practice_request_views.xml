@@ -9,7 +9,7 @@
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box"
-                         groups="chm_choice_of_practices.group_practice_manager">
+                         groups="chm_choice_of_practices.group_administrator,chm_choice_of_practices.group_staff_member_career">
                         <button class="oe_stat_button" name="action_approve" type="object">
                             <div style="display: flex; justify-content: center;">
                                 <div class="o_stat_info" style="display: flex; justify-content: center;">
@@ -46,6 +46,7 @@
                     <group>
                         <group>
                             <field name="student_id"/>
+                            <field name="department_id"/>
                             <field name="enterprises_id"/>
                             <field name="date_from"/>
                             <field name="date_to"/>

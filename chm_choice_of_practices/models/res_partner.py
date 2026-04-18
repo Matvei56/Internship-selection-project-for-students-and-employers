@@ -10,6 +10,7 @@ class ResPartner(models.Model):
         ('manager', 'Керівник практики'),
         ('admin', 'Адміністратор'),
     ], string='Тип контакту', default='student')
+    department_id = fields.Many2one('chm_choice_of_practices.departments',string="Кафедра", store=True)
 
     practice_request_ids = fields.One2many('chm_choice_of_practices.practice_request', 'student_id',
                                            string='Заяви')

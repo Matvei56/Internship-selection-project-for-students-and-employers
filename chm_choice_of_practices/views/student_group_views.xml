@@ -10,6 +10,7 @@
                             <field name="abbreviation"/>
                             <field name="number"/>
                             <field name="full_name"/>
+                            <field name="course"/>
                             <field name="education_program_program_id"/>
                         </group>
                     </group>

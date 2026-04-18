@@ -13,16 +13,19 @@
             <field name="name">Студент (обмежений доступ)</field>
             <field name="category_id" ref="chm_choice_of_practices.module_category_chm_choice_of_practices"/>
         </record>
-
-        <record id="group_practice_manager" model="res.groups">
-            <field name="name">Керівник практики</field>
+        <record id="group_staff_member_career" model="res.groups">
+            <field name="name">Співробітник (Центру розвитку кар'єри)</field>
             <field name="category_id" ref="chm_choice_of_practices.module_category_chm_choice_of_practices"/>
-            <field name="implied_ids" eval="[(4, ref('group_student'))]"/>
+        </record>
+
+        <record id="group_head_of_department" model="res.groups">
+            <field name="name">Завідувач кафедри</field>
+            <field name="category_id" ref="chm_choice_of_practices.module_category_chm_choice_of_practices"/>
         </record>
         <record id="group_administrator" model="res.groups">
             <field name="name">Адміністратор</field>
             <field name="category_id" ref="chm_choice_of_practices.module_category_chm_choice_of_practices"/>
-            <field name="implied_ids" eval="[(4, ref('group_practice_manager'))]"/>
+            <field name="implied_ids" eval="[(4, ref('group_student'))]"/>
         </record>
         <record id="base.user_admin" model="res.users">
             <field name="groups_id" eval="[(4,ref('chm_choice_of_practices.group_administrator'))]"/>
@@ -30,7 +33,5 @@
         <record id="base.default_user" model="res.users">
             <field name="groups_id" eval="[(4,ref('chm_choice_of_practices.group_student'))]"/>
         </record>
-
-
     </data>
 </odoo>

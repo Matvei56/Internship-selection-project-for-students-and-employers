@@ -1,0 +1,124 @@
+<odoo>
+    <!-- Інститут ЕІТ -->
+
+    <record id="dept_iks" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра інформаційних та комп’ютерних систем</field>
+    </record>
+
+    <record id="dept_eiit" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра електричної інженерії та інформаційно-вимірювальних технологій</field>
+    </record>
+
+    <record id="dept_electronics" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра електроніки, автоматики, робототехніки та мехатроніки</field>
+    </record>
+
+    <record id="dept_it" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра інформаційних технологій та програмної інженерії</field>
+    </record>
+
+    <record id="dept_cyber" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра кібербезпеки та математичного моделювання</field>
+    </record>
+
+
+    <!-- Інститут виробництва -->
+
+    <record id="dept_welding" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра технологій зварювання та будівництва</field>
+    </record>
+
+    <record id="dept_auto" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра автомобільного транспорту та галузевого машинобудування</field>
+    </record>
+
+    <record id="dept_machine" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра технологій машинобудування та деревообробки</field>
+    </record>
+
+    <record id="dept_geo" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра геодезії, картографії та землеустрою</field>
+    </record>
+
+    <record id="dept_arch" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра архітектури та дизайну</field>
+    </record>
+
+
+    <!-- Соціальні технології -->
+
+    <record id="dept_social" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра соціальної роботи</field>
+    </record>
+
+    <record id="dept_psychology" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра психології</field>
+    </record>
+
+    <record id="dept_rehab" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра фізичної реабілітації</field>
+    </record>
+
+    <record id="dept_public_law" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра публічного та приватного права</field>
+    </record>
+
+    <record id="dept_criminal" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра кримінального права та правосуддя</field>
+    </record>
+
+    <record id="dept_law_activity" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра правоохоронної діяльності та загальноправових дисциплін</field>
+    </record>
+
+
+    <!-- Бізнес -->
+
+    <record id="dept_finance" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра фінансів, банківської справи та страхування</field>
+    </record>
+
+    <record id="dept_economy" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра економіки, обліку і оподаткування</field>
+    </record>
+
+    <record id="dept_marketing" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра маркетингу, РR-технологій та логістики</field>
+    </record>
+
+    <record id="dept_hr" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра управління персоналом та бізнес-технологій</field>
+    </record>
+
+    <record id="dept_management" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра менеджменту та адміністрування</field>
+    </record>
+
+    <record id="dept_trade" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра підприємництва і торгівлі</field>
+    </record>
+
+
+    <!-- Природокористування -->
+
+    <record id="dept_tourism" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра туризму і готельно-ресторанної справи</field>
+    </record>
+
+    <record id="dept_agro" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра аграрних технологій та лісового господарства</field>
+    </record>
+
+    <record id="dept_philology" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра іноземної філології</field>
+    </record>
+
+    <record id="dept_philosophy" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра філософії і суспільних наук</field>
+    </record>
+
+    <record id="dept_food" model="chm_choice_of_practices.departments">
+        <field name="name">Кафедра харчових технологій та екології</field>
+    </record>
+
+</odoo>

@@ -2,7 +2,6 @@
 
 import {download} from "@web/core/network/download";
 import {registry} from "@web/core/registry";
-import {WARNING_MESSAGE} from "../../../../../prt_report_attachment_preview/static/src/js/tools.esm";
 
 registry
     .category("ir.actions.report handlers")
@@ -30,18 +29,13 @@ registry
             }
             env.services.ui.block();
             try {
-                if (!window.open(url)) {
-                    env.services.notification.add(WARNING_MESSAGE, {
-                        type: "warning",
-                    });
-                }
-                // await download({
-                //     url: "/report/download",
-                //     data: {
-                //         data: JSON.stringify([url, action.report_type]),
-                //         context: JSON.stringify(env.services.user.context),
-                //     },
-                // });
+                await download({
+                    url: "/report/download",
+                    data: {
+                        data: JSON.stringify([url, action.report_type]),
+                        context: JSON.stringify(env.services.user.context),
+                    },
+                });
             } finally {
                 env.services.ui.unblock();
             }

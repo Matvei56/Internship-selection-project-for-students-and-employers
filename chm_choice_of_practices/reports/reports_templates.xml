@@ -1,5 +1,6 @@
 <odoo>
     <data>
+        <!-- XLSX reports-->
         <record id="action_report_all_enterprises" model="xlsx.report.config">
             <field name="name">Загальний звіт баз практик[xlsx]</field>
             <field name="model_id" ref="chm_choice_of_practices.model_chm_choice_of_practices_enterprises"/>
@@ -16,6 +17,30 @@
             <field name="report_xlsx_template_filename">Звіт поточного підприємства[xlsx].xlsx</field>
             <field name="report_xlsx_template" type="base64"
                    file="chm_choice_of_practices/static/templates/шаблон_звіту_поточного_підприємства.xlsx"/>
+            <field name="state">draft</field>
+        </record>
+
+        <!-- DOCX reports-->
+        <record id="action_report_placement_practical" model="docx.report.config">
+            <field name="name">Направлення на практику[word]</field>
+            <field name="model_id" ref="chm_choice_of_practices.model_chm_choice_of_practices_placement_practical"/>
+            <field name="field_id"
+                   ref="chm_choice_of_practices.field_chm_choice_of_practices_placement_practical__name"/>
+            <field name="report_docx_template_filename">Направлення на практику[word].docx</field>
+            <field name="report_docx_template" type="base64"
+                   file="chm_choice_of_practices/static/templates/placement_practical_template.docx"/>
+            <field name="docx_merge_mode">composer</field>
+            <field name="state">draft</field>
+        </record>
+
+        <record id="action_report_practice_agreement" model="docx.report.config">
+            <field name="name">Угода[word]</field>
+            <field name="model_id" ref="chm_choice_of_practices.model_chm_choice_of_practices_practice_agreement"/>
+            <field name="field_id" ref="chm_choice_of_practices.field_chm_choice_of_practices_practice_agreement__display_name"/>
+            <field name="report_docx_template_filename">Угода[word].docx</field>
+            <field name="report_docx_template" type="base64"
+                   file="chm_choice_of_practices/static/templates/practice_agreement_template.docx"/>
+            <field name="docx_merge_mode">composer</field>
             <field name="state">draft</field>
         </record>
     </data>

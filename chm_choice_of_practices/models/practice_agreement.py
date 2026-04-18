@@ -8,13 +8,13 @@ class PracticeAgreement(models.Model):
     _description = 'Угода з підприємством'
     _rec_name = 'display_name'
 
-    number = fields.Char(string="Номер угоди", required=True)
-    date_start = fields.Date(string="Дата укладення",  required=True,  default=fields.Date.context_today)
+    number = fields.Char(string="Номер угоди", required=True, copy=False, readonly=True, default='New')
+    date_start = fields.Date(string="Дата укладення", required=True, default=fields.Date.context_today)
     state = fields.Selection([
         ('inactive', 'Неактивна'),
         ('active', 'Активована'),
         ('expired', 'Прострочена'),
-    ], string="Статус", default='inactive', tracking=True)
+    ], string="Статус", default='inactive')
 
     is_unlimited = fields.Boolean(
         string="Безстрокова угода",
@@ -29,7 +29,7 @@ class PracticeAgreement(models.Model):
 
     enterprises_id = fields.Many2one(
         comodel_name="chm_choice_of_practices.enterprises",
-        string="Підприємство", required=True,)
+        string="Підприємство", required=True, )
 
     # speciality_ids = fields.Many2many(
     #     comodel_name="chm_choice_of_practices.student_group",
@@ -118,12 +118,22 @@ class PracticeAgreement(models.Model):
                         'У підприємства може бути тільки одна активна угода!'
                     )
 
+    def _generate_agreement_number(self):
+        return self.env['ir.sequence'].next_by_code(
+            'chm_choice_of_practices.practice_agreement'
+        ) or ' New'
+
     @api.model
-    def create(self, vals_list):
-        records = super().create(vals_list)
-        records.state = 'active'
-        records._check_and_update_state()
-        return records
+    def create(self, vals):
+        if vals.get('number', 'New') == ' New':
+            vals['number'] = self._generate_agreement_number()
+
+        record = super().create(vals)
+
+        record.state = 'active'
+        record._check_and_update_state()
+
+        return record
 
     def write(self, vals):
         res = super().write(vals)

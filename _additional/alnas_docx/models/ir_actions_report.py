@@ -39,13 +39,12 @@ class IrActionsReport(models.Model):
     @api.constrains("report_type")
     def _check_report_type(self):
         for rec in self:
-            if rec.report_type == "docx":
-                if not rec.report_docx_template:
-                    raise ValidationError(_("Please upload a DOCX template."))
-                if rec.report_docx_template_name:
-                    filename = rec.report_docx_template_name.rstrip()
-                    if not filename.lower().endswith(".docx"):
-                        raise ValidationError(_("Template file must have .docx extension."))
+            if (
+                    rec.report_type == "docx"
+                    and not rec.report_docx_template
+                    and not rec.report_docx_template_name.endswith(".docx")
+            ):
+                raise ValidationError(_("Please upload a DOCX template."))
 
     def _render_docx(self, report_ref, docids, data):
         report = self._get_report_from_name(report_ref)

@@ -22,7 +22,7 @@ class Enterprises(models.Model):
     state = fields.Selection([
         ('inactive', 'Угода не активована'),
         ('active', 'Угода активована'),
-    ], string="Статус угоди", tracking=True)
+    ], string="Статус угоди")
     practice_request_ids = fields.One2many('chm_choice_of_practices.practice_request', 'enterprises_id',
                                            string='Заяви')
 
