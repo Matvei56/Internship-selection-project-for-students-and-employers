@@ -6,3 +6,4 @@ class Departments(models.Model):
     _description = 'Модель кафедр'
 
     name = fields.Char(string="Назва")
+    institutes_id = fields.Many2one('chm_choice_of_practices.institutes', string="Інститут")

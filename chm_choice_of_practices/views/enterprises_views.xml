@@ -34,6 +34,7 @@
                             <field name="cite"/>
                             <field name="field_of_activity"/>
                             <field name="notes"/>
+                            <field name="places_limit"/>
                         </group>
                     </group>
 

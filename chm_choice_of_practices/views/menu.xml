@@ -31,6 +31,8 @@
                   groups="chm_choice_of_practices.group_administrator">
             <menuitem id="menu_student_group" sequence="30" name="Групи"
                       action="chm_choice_of_practices.action_student_group"/>
+            <menuitem id="menu_institutes" sequence="5" name="Інститути"
+                      action="chm_choice_of_practices.action_institutes"/>
             <menuitem id="menu_all_departments" sequence="10" name="Кафедри"
                       action="chm_choice_of_practices.action_departments"/>
             <menuitem id="menu_edu_programs" sequence="20" name="Освітні програми"

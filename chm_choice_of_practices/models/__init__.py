@@ -6,6 +6,7 @@ from . import placement_practical
 from . import student_group
 from . import actions_report
 from . import departments
+from . import institutes
 
 
 from . import res_partner

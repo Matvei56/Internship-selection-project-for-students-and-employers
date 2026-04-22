@@ -32,7 +32,7 @@ class PlacementPractical(models.Model):
     # Дата завершення угоди
     date_end_agreement = fields.Date(string="Дата завершення", related='active_practice_agreement_id.date_end',
                                      readonly=False)
-    # Номер укладеної номер угоди
+    # Номер укладеної угоди
     number = fields.Char(string="Номер угоди", related='active_practice_agreement_id.number', readonly=False)
     # Дата початку практики
     date_start_practical = fields.Date(string="Дата початку практики",

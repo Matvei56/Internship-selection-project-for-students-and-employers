@@ -10,11 +10,16 @@
                        required="required" t-att-readonly="'readonly' if only_passwords else None"
                        t-att-autofocus="'autofocus' if login and not only_passwords else None"/>
             </div>
+
         </xpath>
         <xpath expr="//div[contains(@class,'field-name')]" position="attributes">
             <attribute name="t-if">False</attribute>
         </xpath>
-
+        <xpath expr="//input[@name='login']" position="attributes">
+            <attribute name="type">email</attribute>
+            <attribute name="pattern">^[^@]+@stu\.cn\.ua$</attribute>
+            <attribute name="title">Дозволені тільки email домену @stu.cn.ua</attribute>
+            <attribute name="placeholder">example@stu.cn.ua</attribute>
+        </xpath>
     </template>
-
 </odoo>

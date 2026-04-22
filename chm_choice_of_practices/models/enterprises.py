@@ -6,39 +6,64 @@ class Enterprises(models.Model):
     _name = 'chm_choice_of_practices.enterprises'
     _description = 'Модель підприємств'
 
+    # Назва підприємства
     name = fields.Char(string="Назва", required=True)
+
+    # Відповідальна особа підприємства
     partner_id = fields.Many2one('res.partner', 'Відповідальна особа', default=lambda self: self.env.user.partner_id)
+
+    # Тип практики
     practice_type = fields.Selection([
         ('educational', 'Навчальна'),
         ('project_technological', 'Проєктно-технологічна'),
         ('industrial', 'Виробнича'),
         ('pre_diploma', 'Переддипломна'),
     ], string="Тип практики")
+
+    # Єдрпоу підприємства
     edrpou = fields.Char(string="ЄДРПОУ")
+
+    # Інформаційні поля підприємства
     address = fields.Char(string="Адреса")
     cite = fields.Char(string="Сайт")
     field_of_activity = fields.Char(string="Сфера діяльності")
     notes = fields.Text(string="Примітки")
+
+    # Статус угоди підприємства
     state = fields.Selection([
         ('inactive', 'Угода не активована'),
         ('active', 'Угода активована'),
     ], string="Статус угоди")
+
+    # Заяви до підприємства
     practice_request_ids = fields.One2many('chm_choice_of_practices.practice_request', 'enterprises_id',
                                            string='Заяви')
 
+    # Загальна та актуальна кількість місць
+    places_limit = fields.Integer(string="Ліміт місць", related='active_practice_agreement_id.places_limit')
+    places_remaining = fields.Integer(string="Місць залишилось")
+
+    # Угоди підприємства
     practice_agreement_ids = fields.One2many('chm_choice_of_practices.practice_agreement', 'enterprises_id',
                                              string='Угоди')
+
+    # Активна угода підприємства
     active_practice_agreement_id = fields.Many2one(
         'chm_choice_of_practices.practice_agreement',
         string='Активна угода',
         compute='_compute_active_practice_agreement',
         store=True
     )
+
+    # Загальна кількість заяв до підприємства
     practice_request_count = fields.Integer(
         string='Усьго заяв до підприємства', compute='_compute_practice_request_count', store=False)
+
+    # Загальна кількість підприємств
     enterprises_count = fields.Integer(
         string='Усьго підприємств', compute='_compute_enterprises_count', store=False)
 
+    # Поля кількостей заяв для друку
     new_request_count = fields.Integer(compute="_compute_practice_request_counts", string="Нові")
     in_progress_request_count = fields.Integer(compute="_compute_practice_request_counts", string="В обробці")
     approved_request_count = fields.Integer(compute="_compute_practice_request_counts", string="Схвалені")
@@ -46,6 +71,7 @@ class Enterprises(models.Model):
     needs_edits_request_count = fields.Integer(compute="_compute_practice_request_counts", string="Потребують правок")
     education_program_count = fields.Integer(compute="_compute_education_program_count", string="Освітні програми")
 
+    # Поле відображення всіх підприємств
     enterprises_ids = fields.Many2many(
         'chm_choice_of_practices.enterprises',
         compute='_compute_enterprises_ids',
@@ -54,12 +80,15 @@ class Enterprises(models.Model):
         readonly=True
     )
 
+    # Користувач у системі
     current_user_id = fields.Many2one(
         'res.users',
         string="Поточний юзер",
         compute="_compute_current_user",
         store=False
     )
+
+    # Освітні програми
     education_program_line_ids = fields.One2many('chm_choice_of_practices.education_program_line', 'enterprises_id',
                                             string='Освітні програми')
 

@@ -8,7 +8,7 @@ class PracticeAgreement(models.Model):
     _description = 'Угода з підприємством'
     _rec_name = 'display_name'
 
-    number = fields.Char(string="Номер угоди", required=True, copy=False, readonly=True, default='New')
+    number = fields.Char(string="Number", required=True,copy=False, readonly=True, default='New' )
     date_start = fields.Date(string="Дата укладення", required=True, default=fields.Date.context_today)
     state = fields.Selection([
         ('inactive', 'Неактивна'),
@@ -30,11 +30,6 @@ class PracticeAgreement(models.Model):
     enterprises_id = fields.Many2one(
         comodel_name="chm_choice_of_practices.enterprises",
         string="Підприємство", required=True, )
-
-    # speciality_ids = fields.Many2many(
-    #     comodel_name="chm_choice_of_practices.student_group",
-    #     string="Спеціальності / ОП"
-    # )
 
     practice_type = fields.Selection([
         ('educational', 'Навчальна'),
@@ -118,18 +113,19 @@ class PracticeAgreement(models.Model):
                         'У підприємства може бути тільки одна активна угода!'
                     )
 
-    def _generate_agreement_number(self):
-        return self.env['ir.sequence'].next_by_code(
-            'chm_choice_of_practices.practice_agreement'
-        ) or ' New'
-
     @api.model
     def create(self, vals):
-        if vals.get('number', 'New') == ' New':
-            vals['number'] = self._generate_agreement_number()
+
+        if vals.get('number', 'New') == 'New':
+            vals['number'] = self.env['ir.sequence'].next_by_code(
+                'chm_choice_of_practices.practice_agreement'
+            ) or 'New'
+
+        for val in vals:
+            if 'places_limit' in val:
+                val['places_remaining'] = val['places_limit']
 
         record = super().create(vals)
-
         record.state = 'active'
         record._check_and_update_state()
 

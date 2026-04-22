@@ -6,9 +6,10 @@
     "data": [
         'reports/reports_templates.xml',
 
+        'data/institutes_data.xml',
         'data/student_group_data.xml',
         'data/ir_cron_data.xml',
-        'data/education_prigrams_data.xml',
+        'data/education_programs_data.xml',
         'data/departments_data.xml',
         'data/sequence.xml',
         'wizard/partner_check_wizard.xml',
@@ -21,6 +22,7 @@
         'views/education_program_views.xml',
         'views/signup_templates.xml',
         'views/departments_views.xml',
+        'views/institutes_views.xml',
         'security/role_group.xml',
         'security/ir.model.access.csv',
         'security/rules.xml',

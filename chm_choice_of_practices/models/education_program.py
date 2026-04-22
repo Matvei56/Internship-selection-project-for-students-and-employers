@@ -14,40 +14,19 @@ class EducationProgram(models.Model):
 
     specialty = fields.Char(string='Спеціальність', )
     student_group_ids = fields.One2many(comodel_name='chm_choice_of_practices.student_group',
-                                        inverse_name='education_program_program_id',
-                                        string='Групи')
+                                        inverse_name='education_program_program_id', string='Групи')
     status = fields.Selection([
         ('project', 'Проєкт'),
         ('approved', 'Затверджено'),
     ], string='Статус програми')
 
-    curriculum = fields.Text(
-        string='Навчальні плани'
-    )
-
-    start_date = fields.Date(
-        string='Дата введення в дію'
-    )
-
-    admission_year = fields.Char(
-        string='Рік набору'
-    )
-
-    stakeholder_reviews = fields.Text(
-        string='Відгуки (рецензії) стейкхолдерів'
-    )
-
-    changes = fields.Text(
-        string='Зміни до програми'
-    )
-
-    faculty = fields.Char(
-        string='ННІ (факультет)'
-    )
-
-    department = fields.Char(
-        string='Випускова кафедра'
-    )
+    curriculum = fields.Text(string='Навчальні плани')
+    start_date = fields.Date(string='Дата введення в дію')
+    admission_year = fields.Char(string='Рік набору')
+    stakeholder_reviews = fields.Text(string='Відгуки (рецензії) стейкхолдерів')
+    changes = fields.Text(string='Зміни до програми')
+    faculty = fields.Char(string='ННІ (факультет)')
+    department = fields.Char(string='Випускова кафедра')
 
 
 class EducationProgramLine(models.Model):
@@ -70,33 +49,13 @@ class EducationProgramLine(models.Model):
         ('approved', 'Затверджено'),
     ], string='Статус програми')
 
-    curriculum = fields.Text(
-        string='Навчальні плани'
-    )
-
-    start_date = fields.Date(
-        string='Дата введення в дію'
-    )
-
-    admission_year = fields.Char(
-        string='Рік набору'
-    )
-
-    stakeholder_reviews = fields.Text(
-        string='Відгуки (рецензії) стейкхолдерів'
-    )
-
-    changes = fields.Text(
-        string='Зміни до програми'
-    )
-
-    faculty = fields.Char(
-        string='ННІ (факультет)'
-    )
-
-    department = fields.Char(
-        string='Випускова кафедра'
-    )
+    curriculum = fields.Text(string='Навчальні плани')
+    start_date = fields.Date(string='Дата введення в дію')
+    admission_year = fields.Char(string='Рік набору')
+    stakeholder_reviews = fields.Text(string='Відгуки (рецензії) стейкхолдерів')
+    changes = fields.Text(string='Зміни до програми')
+    faculty = fields.Char(string='ННІ (факультет)')
+    department = fields.Char(string='Випускова кафедра')
 
     @api.onchange('education_program_id')
     def _onchange_education_program(self):

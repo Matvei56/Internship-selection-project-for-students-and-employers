@@ -1,9 +1,20 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 import logging
+from odoo.exceptions import ValidationError
 
 
 class ResUsers(models.Model):
     _inherit = 'res.users'
+
+
+    # todo тимчасово
+    # @api.constrains('login')
+    # def _check_login_domain(self):
+    #     for user in self:
+    #         if user.login and not user.login.endswith('@stu.cn.ua'):
+    #             raise ValidationError(
+    #                 _("Дозволені тільки email @stu.cn.ua")
+    #             )
 
     @api.model_create_multi
     def create(self, vals_list):
