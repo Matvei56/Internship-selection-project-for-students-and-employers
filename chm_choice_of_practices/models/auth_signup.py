@@ -5,7 +5,7 @@ from odoo.http import request
 from odoo.exceptions import UserError
 from odoo.http import request
 
-
+# todo перед релізом прибрати
 class AuthSignupHomeInherit(AuthSignupHome):
 
     def _prepare_signup_values(self, qcontext):

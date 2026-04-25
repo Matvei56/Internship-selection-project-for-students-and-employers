@@ -5,14 +5,14 @@ class EducationProgram(models.Model):
     _name = 'chm_choice_of_practices.education_program'
     _description = 'Освітня програма'
 
-    name = fields.Char(string='Назва освітньої програми', )
+    name = fields.Char(string='Назва освітньої програми', index=True )
     degree = fields.Selection([
         ('bachelor', 'Бакалавр'),
         ('master', 'Магістр'),
         ('phd', 'Доктор філософії'),
     ], string='Освітній ступінь')
 
-    specialty = fields.Char(string='Спеціальність', )
+    specialty = fields.Char(string='Спеціальність', index=True)
     student_group_ids = fields.One2many(comodel_name='chm_choice_of_practices.student_group',
                                         inverse_name='education_program_program_id', string='Групи')
     status = fields.Selection([

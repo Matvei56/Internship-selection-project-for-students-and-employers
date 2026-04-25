@@ -7,7 +7,7 @@ class Enterprises(models.Model):
     _description = 'Модель підприємств'
 
     # Назва підприємства
-    name = fields.Char(string="Назва", required=True)
+    name = fields.Char(string="Назва", index=True ,required=True, help="Назва підприємства/місця проходження практики")
 
     # Відповідальна особа підприємства
     partner_id = fields.Many2one('res.partner', 'Відповідальна особа', default=lambda self: self.env.user.partner_id)
@@ -33,7 +33,7 @@ class Enterprises(models.Model):
     state = fields.Selection([
         ('inactive', 'Угода не активована'),
         ('active', 'Угода активована'),
-    ], string="Статус угоди")
+    ], string="Статус угоди", index=True)
 
     # Заяви до підприємства
     practice_request_ids = fields.One2many('chm_choice_of_practices.practice_request', 'enterprises_id',
