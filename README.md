@@ -1,4 +1,4 @@
- Internship Selection Project  
+Internship Selection Project  
 Платформа зручного пошуку місця проходження практики для судентів.
 
 
@@ -16,3 +16,7 @@
 - Процес подачі/погодження заявки студента.
 - Генерація DOCX/PDF: "Направлення на практику", "Угода про практику"
 - Аналітика, звіти та експорт (для кафедри/адміністратора).
+=======
+# Internship-selection-project-for-students-and-employers
+This project was created to simplify the selection of internships for students and companies.
+
