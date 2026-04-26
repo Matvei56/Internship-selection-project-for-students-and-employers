@@ -1,0 +1,197 @@
+<odoo>
+    <record id="view_form_enterprises" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.enterprises.form</field>
+        <field name="model">chm_choice_of_practices.enterprises</field>
+        <field name="arch" type="xml">
+            <form string="Підприємства">
+                <header>
+                    <field name="state" widget="statusbar" options="{'fold_field': 'fold'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="actions_create_request" type="object">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Подати заявку
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title" style="display: flex; align-items: center; min-width: 80%;">
+                        <h1 style="flex-grow: 1; white-space: nowrap; overflow: hidden;">
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <!--                            <field name="partner_id"/>-->
+                            <field name="edrpou"/>
+                            <field name="partner_id" readonly="0"/>
+                            <field name="address"/>
+                            <field name="practice_type"/>
+                            <field name="cite"/>
+                            <field name="field_of_activity"/>
+                            <field name="notes"/>
+                            <field name="places_limit"/>
+                        </group>
+                    </group>
+
+                    <notebook
+                            groups="chm_choice_of_practices.group_administrator,chm_choice_of_practices.group_staff_member_career">
+                        <page string="Заяви">
+                            <label for="practice_request_count"/>
+                            <field name="practice_request_count"/>
+                            <field name="practice_request_ids">
+                                <tree decoration-muted="state=='new'"
+                                      decoration-danger="state=='rejected'"
+                                      decoration-warning="state=='needs_edits'"
+                                      decoration-info="state=='in_progress'"
+                                      decoration-success="state=='approved'">
+                                    <field name="name"/>
+                                    <field name="state"/>
+                                    <field name="student_id"/>
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                </tree>
+                            </field>
+
+                        </page>
+                        <page string="Угоди">
+                            <field name="practice_agreement_ids">
+                                <tree decoration-muted="state=='expired'"
+                                      decoration-danger="state=='inactive'">
+                                    <field name="display_name" readonly="1"/>
+                                    <field name="state"/>
+                                    <field name="number"/>
+                                    <field name="date_start"/>
+                                    <field name="enterprises_id"/>
+                                    <field name="is_unlimited"/>
+                                    <field name="is_auto_prolongation"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Освітні програми">
+                            <label for="education_program_count"/>
+                            <field name="education_program_count"/>
+                            <field name="education_program_line_ids" required="1">
+                                <tree string="Освітні програми" editable="bottom">
+                                    <field name="education_program_id"/>
+                                    <field name="name"/>
+                                    <field name="degree"/>
+                                    <field name="specialty"/>
+                                    <field name="status"/>
+                                    <field name="admission_year"/>
+                                    <field name="faculty"/>
+                                    <field name="department"/>
+                                    <field name="start_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Список підприємств">
+                            <label for="enterprises_count"/>
+                            <field name="enterprises_count"/>
+                            <field name="enterprises_ids">
+                                <tree string="Підприємства"
+                                      decoration-danger="state=='inactive'">
+                                    <field name="name"/>
+                                    <field name="state"/>
+                                    <!--                <field name="partner_id"/>-->
+                                    <field name="edrpou"/>
+                                    <field name="practice_type"/>
+                                    <field name="address"/>
+                                    <field name="cite"/>
+                                    <field name="field_of_activity"/>
+                                    <field name="notes"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_enterprises" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.enterprises.tree</field>
+        <field name="model">chm_choice_of_practices.enterprises</field>
+        <field name="arch" type="xml">
+            <tree string="Підприємства"
+                  decoration-danger="state=='inactive'">
+                <field name="name"/>
+                <field name="state" groups="chm_choice_of_practices.group_administrator"/>
+                <field name="partner_id" string="Відповідвльний"
+                       groups="chm_choice_of_practices.group_administrator"/>
+                <field name="edrpou" groups="chm_choice_of_practices.group_administrator"/>
+                <field name="practice_type"/>
+                <field name="address"/>
+                <field name="field_of_activity"/>
+                <field name="practice_request_count" groups="chm_choice_of_practices.group_administrator"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_enterprises_search" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.enterprises.search</field>
+        <field name="model">chm_choice_of_practices.enterprises</field>
+        <field name="arch" type="xml">
+            <search string="Підприємства">
+                <field name="name" string="Назва"/>
+                <field name="edrpou" string="ЄДРПОУ"/>
+                <field name="partner_id" string="Відповідальна особа"/>
+                <field name="address" string="Адреса"/>
+                <field name="field_of_activity" string="Сфера діяльності"/>
+                <separator/>
+
+                <filter name="active"
+                        string="Активні"
+                        domain="[('state','=','active')]"/>
+                <filter name="inactive"
+                        string="Не активні"
+                        domain="[('state','=','inactive')]"/>
+                <separator/>
+                <filter name="educational"
+                        string="Навчальна практика"
+                        domain="[('practice_type','=','educational')]"/>
+                <filter name="project"
+                        string="Проєктно-технологічна"
+                        domain="[('practice_type','=','project_technological')]"/>
+                <filter name="industrial"
+                        string="Виробнича"
+                        domain="[('practice_type','=','industrial')]"/>
+                <filter name="pre_diploma"
+                        string="Переддипломна"
+                        domain="[('practice_type','=','pre_diploma')]"/>
+                <separator/>
+
+                <group expand="0" string="Групувати за">
+                    <filter name="group_by_state"
+                            string="Статус угоди"
+                            context="{'group_by':'state'}"/>
+                    <filter name="group_by_practice_type"
+                            string="Тип практики"
+                            context="{'group_by':'practice_type'}"/>
+                    <filter name="group_by_partner"
+                            string="Відповідальна особа"
+                            context="{'group_by':'partner_id'}"/>
+                    <filter name="group_by_field"
+                            string="Сфера діяльності"
+                            context="{'group_by':'field_of_activity'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_enterprises" model="ir.actions.act_window">
+        <field name="name">Підприємства</field>
+        <field name="res_model">chm_choice_of_practices.enterprises</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Список підприємств</p>
+        </field>
+    </record>
+
+</odoo>

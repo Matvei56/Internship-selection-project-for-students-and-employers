@@ -1,0 +1,104 @@
+<odoo>
+    <record id="view_edu_program_form" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.education_program.form</field>
+        <field name="model">chm_choice_of_practices.education_program</field>
+        <field name="arch" type="xml">
+            <form string="Освітня програма">
+                <header>
+                    <field name="status"
+                           widget="statusbar"
+                           statusbar_visible="project,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Назва програми"/>
+                        </h1>
+                    </div>
+
+                    <group>
+
+                        <group string="Основна інформація">
+
+                            <field name="degree"/>
+                            <field name="specialty"/>
+                            <field name="admission_year"/>
+                            <field name="start_date"/>
+
+                        </group>
+
+                        <group string="Структура">
+
+                            <field name="faculty"/>
+                            <field name="department"/>
+
+                        </group>
+
+                    </group>
+
+                    <notebook>
+                        <page string="Пов'язані групи">
+
+                            <field name="student_group_ids">
+                                <tree editable="bottom">
+                                    <field name="abbreviation"/>
+                                    <field name="number"/>
+                                    <field name="full_name"/>
+
+                                </tree>
+                            </field>
+
+                        </page>
+
+                        <page string="Навчальні плани">
+
+                            <field name="curriculum"
+                                   placeholder="Опис навчальних планів..."/>
+
+                        </page>
+
+                        <page string="Відгуки">
+
+                            <field name="stakeholder_reviews"
+                                   placeholder="Рецензії стейкхолдерів..."/>
+
+                        </page>
+
+                        <page string="Зміни">
+
+                            <field name="changes"
+                                   placeholder="Зміни до програми..."/>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_edu_program_tree" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.education_program.tree</field>
+        <field name="model">chm_choice_of_practices.education_program</field>
+        <field name="arch" type="xml">
+            <tree string="Освітні програми">
+                <field name="name"/>
+                <field name="degree"/>
+                <field name="specialty"/>
+                <field name="status"/>
+                <field name="admission_year"/>
+                <field name="faculty"/>
+                <field name="department"/>
+                <field name="start_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_edu_programs" model="ir.actions.act_window">
+        <field name="name">Освітні програми</field>
+        <field name="res_model">chm_choice_of_practices.education_program</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

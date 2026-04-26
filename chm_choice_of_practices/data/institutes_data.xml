@@ -1,0 +1,17 @@
+<odoo>
+    <record id="inst_1" model="chm_choice_of_practices.institutes">
+        <field name="name">Інститут ЕІТ</field>
+    </record>
+    <record id="inst_2" model="chm_choice_of_practices.institutes">
+        <field name="name">Інститут виробництва</field>
+    </record>
+    <record id="inst_3" model="chm_choice_of_practices.institutes">
+        <field name="name">Соціальні технології</field>
+    </record>
+    <record id="inst_4" model="chm_choice_of_practices.institutes">
+        <field name="name">Бізнес</field>
+    </record>
+    <record id="inst_5" model="chm_choice_of_practices.institutes">
+        <field name="name">Природокористування</field>
+    </record>
+</odoo>

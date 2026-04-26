@@ -1,0 +1,11 @@
+<odoo>
+    <record id="seq_practice_agreement" model="ir.sequence">
+        <field name="name">Practice Agreement Number</field>
+        <field name="code">chm_choice_of_practices.practice_agreement</field>
+        <field name="prefix">PA/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+</odoo>

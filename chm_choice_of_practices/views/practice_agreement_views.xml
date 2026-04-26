@@ -1,0 +1,186 @@
+<odoo>
+    <record id="view_form_practice_agreement" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_agreement.form</field>
+        <field name="model">chm_choice_of_practices.practice_agreement</field>
+        <field name="arch" type="xml">
+            <form string="Угода з підприємством">
+                <header>
+                    <field name="state" widget="statusbar" options="{'fold_field': 'fold'}"/>
+                </header>
+                <sheet>
+
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="action_activate" type="object"
+                                attrs="{'invisible': [('state','in','active')]}">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Активувати заяву
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" name="action_deactivate" type="object"
+                                attrs="{'invisible': [('state','in',('expired', 'inactive'))]}">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="o_stat_info" style="display: flex; justify-content: center;">
+                                    <strong class="ml-2">
+                                        Деактивувати заяву
+                                    </strong>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="display_name" readonly="1"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="number"/>
+                            <field name="date_start"/>
+                            <field name="enterprises_id"/>
+                        </group>
+                        <group>
+                            <field name="is_unlimited"/>
+                            <field name="is_auto_prolongation"/>
+                            <field name="date_end"
+                                   attrs="{'invisible': [('is_unlimited','=',True)]}"/>
+                        </group>
+                    </group>
+
+
+                    <notebook>
+
+                        <!--                        <page string="Спеціальності / ОП">-->
+                        <!--                            <field name="speciality_ids" widget="many2many_tags"/>-->
+                        <!--                        </page>-->
+
+                        <page string="Умови практики">
+                            <group>
+                                <group>
+                                    <field name="practice_type"/>
+                                    <field name="season"/>
+                                </group>
+                                <group>
+                                    <field name="places_limit"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Додаткові умови">
+                            <field name="additional_conditions"
+                                   placeholder="Вкажіть особливі умови, вимоги або застереження..."/>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_practice_agreement" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_agreement.tree</field>
+        <field name="model">chm_choice_of_practices.practice_agreement</field>
+        <field name="arch" type="xml">
+            <tree string="Угоди з підприємствами"
+                  decoration-muted="state=='expired'"
+                  decoration-danger="state=='inactive'">
+                <field name="display_name"/>
+                <field name="state"/>
+                <field name="enterprises_id"/>
+                <field name="number"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="is_unlimited"/>
+                <field name="is_auto_prolongation"/>
+                <field name="practice_type"/>
+                <field name="season"/>
+                <field name="places_limit"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_practice_agreement_search" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.practice_agreement.search</field>
+        <field name="model">chm_choice_of_practices.practice_agreement</field>
+        <field name="arch" type="xml">
+            <search string="Угоди з підприємствами">
+                <field name="number" string="Номер угоди"/>
+                <field name="enterprises_id" string="Підприємство"/>
+                <field name="date_start" string="Дата укладення"/>
+                <field name="date_end" string="Термін дії до"/>
+                <field name="practice_type" string="Тип практики"/>
+                <field name="season" string="Сезонність"/>
+                <separator/>
+
+                <filter name="state_active"
+                        string="Активні"
+                        domain="[('state','=','active')]"/>
+                <filter name="state_inactive"
+                        string="Неактивні"
+                        domain="[('state','=','inactive')]"/>
+                <filter name="state_expired"
+                        string="Прострочені"
+                        domain="[('state','=','expired')]"/>
+                <separator/>
+
+                <filter name="educational"
+                        string="Навчальна практика"
+                        domain="[('practice_type','=','educational')]"/>
+                <filter name="industrial"
+                        string="Виробнича практика"
+                        domain="[('practice_type','=','industrial')]"/>
+                <filter name="pre_diploma"
+                        string="Переддипломна практика"
+                        domain="[('practice_type','=','pre_diploma')]"/>
+                <separator/>
+
+                <filter name="unlimited"
+                        string="Безстрокові"
+                        domain="[('is_unlimited','=',True)]"/>
+                <filter name="auto_prolongation"
+                        string="З автопролонгацією"
+                        domain="[('is_auto_prolongation','=',True)]"/>
+                <filter name="with_places"
+                        string="З лімітом місць"
+                        domain="[('places_limit','>',0)]"/>
+                <separator/>
+
+                <group expand="0" string="Групувати за">
+                    <filter name="group_by_state"
+                            string="Статус"
+                            context="{'group_by':'state'}"/>
+                    <filter name="group_by_enterprise"
+                            string="Підприємство"
+                            context="{'group_by':'enterprises_id'}"/>
+                    <filter name="group_by_practice_type"
+                            string="Тип практики"
+                            context="{'group_by':'practice_type'}"/>
+                    <filter name="group_by_season"
+                            string="Сезонність"
+                            context="{'group_by':'season'}"/>
+                    <filter name="group_by_date_start"
+                            string="Дата укладення"
+                            context="{'group_by':'date_start'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_practice_agreement" model="ir.actions.act_window">
+        <field name="name">Угоди</field>
+        <field name="res_model">chm_choice_of_practices.practice_agreement</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Список угод</p>
+        </field>
+    </record>
+
+</odoo>

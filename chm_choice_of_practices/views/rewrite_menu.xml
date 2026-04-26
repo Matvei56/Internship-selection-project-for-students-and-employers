@@ -1,0 +1,17 @@
+<odoo>
+    <record id="contacts.menu_contacts" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('chm_choice_of_practices.group_administrator')])]"/>
+    </record>
+    <record id="mail.menu_root_discuss" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('chm_choice_of_practices.group_administrator')])]"/>
+    </record>
+<!--    <record id="calendar.mail_menu_calendar" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--    </record>-->
+    <record id="utm.menu_link_tracker_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+    <record id="alnas_docx.menu_main_docx_report" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('chm_choice_of_practices.group_administrator')])]"/>
+    </record>
+</odoo>

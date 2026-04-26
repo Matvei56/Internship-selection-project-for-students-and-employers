@@ -1,0 +1,73 @@
+<odoo>
+    <record id="view_form_placement_practical" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.placement_practical.form</field>
+        <field name="model">chm_choice_of_practices.placement_practical</field>
+        <field name="arch" type="xml">
+            <form string="Направлення на практику">
+
+                <sheet>
+
+                    <!-- Заголовок -->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Назва направлення"/>
+                        </h1>
+                    </div>
+
+                    <!-- Основна інформація -->
+                    <group>
+                        <group>
+                            <field name="enterprises_id"/>
+                            <field name="head_of_practice" readonly="1"/>
+                            <field name="student_id"/>
+                        </group>
+
+                        <group>
+                            <field name="active_practice_agreement_id" readonly="1"/>
+                            <field name="number" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Деталі">
+                            <group>
+                                <field name="enterprises_id" readonly="1"/>
+                                <field name="date_start_agreement" readonly="0"/>
+                                <field name="date_end_agreement" readonly="0"/>
+                                <field name="date_start_practical"/>
+                                <field name="date_end_practical"/>
+                                <field name="practice_request_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_placement_practical" model="ir.ui.view">
+        <field name="name">chm_choice_of_practices.placement_practical.tree</field>
+        <field name="model">chm_choice_of_practices.placement_practical</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="enterprises_id"/>
+                <field name="head_of_practice"/>
+                <field name="active_practice_agreement_id"/>
+                <field name="number"/>
+                <field name="date_start_agreement"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_placement_practical" model="ir.actions.act_window">
+        <field name="name">Направлення на практику</field>
+        <field name="res_model">chm_choice_of_practices.placement_practical</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Список направлень</p>
+        </field>
+    </record>
+
+</odoo>

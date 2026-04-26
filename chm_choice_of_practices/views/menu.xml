@@ -1,0 +1,52 @@
+<odoo>
+    <menuitem id="menu_chm_choice_of_practices" name="Практики"
+              action="chm_choice_of_practices.action_enterprises"
+              sequence="1" web_icon="chm_choice_of_practices,static/description/icon.png">
+        <menuitem id="menu_enterprises" sequence="1" name="Підприємства"
+                  action="chm_choice_of_practices.action_enterprises"/>
+        <menuitem id="menu_practice_agreement" sequence="2" name="Угоди"
+                  action="chm_choice_of_practices.action_practice_agreement"
+                  groups="chm_choice_of_practices.group_administrator"/>
+        <menuitem id="menu_practice_request1" sequence="3" name="Заяви"
+                  action="chm_choice_of_practices.action_practice_request"
+                  groups="chm_choice_of_practices.group_administrator,chm_choice_of_practices.group_head_of_department,chm_choice_of_practices.group_staff_member_career"/>
+        <menuitem id="menu_placement_practical" sequence="3" name="Направлення"
+                  action="chm_choice_of_practices.action_placement_practical"
+                  groups="chm_choice_of_practices.group_administrator,group_head_of_department,chm_choice_of_practices.group_staff_member_career"/>
+        <menuitem id="menu_practice_request_for_student" sequence="3" name="Мої заяви"
+                  action="chm_choice_of_practices.action_practice_request"
+                  groups="chm_choice_of_practices.group_student_only"/>
+        <menuitem id="menu_general_contacts" sequence="4" name="Контакти"
+                  groups="chm_choice_of_practices.group_administrator">
+            <menuitem id="menu_contacts" sequence="1" name="Усі контакти"
+                      action="contacts.action_contacts"
+                      groups="chm_choice_of_practices.group_administrator"/>
+            <menuitem id="menu_practice_manager" sequence="2" name="Керівники практики"
+                      action="action_practice_manager_view_kanban"
+                      groups="chm_choice_of_practices.group_administrator"/>
+            <menuitem id="menu_students" sequence="3" name="Студенти"
+                      action="action_students_view_kanban"/>
+        </menuitem>
+        <menuitem id="menu_education_program" sequence="5" name="Освітні програми"
+                  groups="chm_choice_of_practices.group_administrator">
+            <menuitem id="menu_student_group" sequence="30" name="Групи"
+                      action="chm_choice_of_practices.action_student_group"/>
+            <menuitem id="menu_institutes" sequence="5" name="Інститути"
+                      action="chm_choice_of_practices.action_institutes"/>
+            <menuitem id="menu_all_departments" sequence="10" name="Кафедри"
+                      action="chm_choice_of_practices.action_departments"/>
+            <menuitem id="menu_edu_programs" sequence="20" name="Освітні програми"
+                      action="chm_choice_of_practices.action_edu_programs"/>
+        </menuitem>
+        <menuitem id="menu_res_users" sequence="6" name="Користувачі"
+                  groups="chm_choice_of_practices.group_administrator"
+                  action="base.action_res_users"/>
+        <menuitem id="menu_my_profile" sequence="7" name="Мій профіль"
+                  action="action_open_my_profile_server"
+                  groups="chm_choice_of_practices.group_student_only,group_head_of_department,chm_choice_of_practices.group_student"/>
+
+    </menuitem>
+
+
+</odoo>
+

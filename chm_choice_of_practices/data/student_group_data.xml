@@ -1,0 +1,59 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="student_group_ki_222" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">КІ</field>
+            <field name="number">222</field>
+            <field name="full_name">Комп'ютерна інженерія</field>
+        </record>
+
+        <record id="student_group_ki_223" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">КІ</field>
+            <field name="number">223</field>
+            <field name="full_name">Комп'ютерна інженерія,</field>
+        </record>
+
+        <record id="student_group_ipz_221" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">ІПЗ</field>
+            <field name="number">221</field>
+            <field name="full_name">Інженерія програмного забезпечення</field>
+        </record>
+
+        <record id="student_group_ipz_222" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">ІПЗ</field>
+            <field name="number">222</field>
+            <field name="full_name">Інженерія програмного забезпечення</field>
+        </record>
+
+        <record id="student_group_kn_221" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">КН</field>
+            <field name="number">221</field>
+            <field name="full_name">Комп'ютерні науки</field>
+        </record>
+
+        <record id="student_group_kn_222" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">КН</field>
+            <field name="number">222</field>
+            <field name="full_name">Комп'ютерні науки</field>
+        </record>
+
+        <record id="student_group_ek_231" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">ЕК</field>
+            <field name="number">231</field>
+            <field name="full_name">Економіка</field>
+        </record>
+
+        <record id="student_group_mn_241" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">МН</field>
+            <field name="number">241</field>
+            <field name="full_name">Менеджмент</field>
+        </record>
+
+        <record id="student_group_fi_242" model="chm_choice_of_practices.student_group">
+            <field name="abbreviation">ФІ</field>
+            <field name="number">242</field>
+            <field name="full_name">Фінанси</field>
+        </record>
+
+    </data>
+</odoo>
