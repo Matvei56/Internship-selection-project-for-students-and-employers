@@ -1,0 +1,43 @@
+<odoo>
+    <template id="email_input_template" name="Signup Email Input">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h3 class="text-center mb-4">Реєстрація</h3>
+                                    <p class="text-muted">Введіть свою електронну адресу, ми надішлемо посилання для підтвердження.</p>
+                                    <form action="/signup/send_token" method="post">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                        <div class="form-group mb-3">
+                                            <input type="email" name="email" class="form-control"
+                                                   placeholder="example@mail.com" required="required"/>
+                                        </div>
+                                        <t t-if="error">
+                                            <p class="text-danger">
+                                                <t t-esc="error"/>
+                                            </p>
+                                        </t>
+                                        <button type="submit" class="btn btn-primary w-100">Надіслати посилання</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="check_email_message" name="Check Email Message">
+        <t t-call="website.layout">
+            <div class="container text-center mt-5">
+                <h2>Лист надіслано!</h2>
+                <p>Будь ласка, перевірте свою електронну пошту та перейдіть за посиланням, щоб завершити реєстрацію.</p>
+            </div>
+        </t>
+    </template>
+</odoo>
