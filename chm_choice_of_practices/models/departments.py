@@ -10,3 +10,4 @@ class Departments(models.Model):
 
     # Підв'язка до інституту
     institutes_id = fields.Many2one('chm_choice_of_practices.institutes', string="Інститут")
+    education_program_ids = fields.One2many('chm_choice_of_practices.education_program', 'departments_id')

@@ -1,0 +1,213 @@
+<odoo>
+
+    <record id="partner_demo_1" model="res.partner">
+        <field name="name">Іваненко Олександр Петрович</field>
+        <field name="email">ivanenko1@test.com</field>
+        <field name="phone">+380501000001</field>
+        <field name="city">Чернігів</field>
+    </record>
+
+    <record id="partner_demo_2" model="res.partner">
+        <field name="name">Петренко Андрій Миколайович</field>
+        <field name="email">petrenko2@test.com</field>
+        <field name="phone">+380501000002</field>
+        <field name="city">Київ</field>
+    </record>
+
+    <record id="partner_demo_3" model="res.partner">
+        <field name="name">Шевченко Дмитро Олегович</field>
+        <field name="email">shevchenko3@test.com</field>
+        <field name="phone">+380501000003</field>
+        <field name="city">Львів</field>
+    </record>
+
+    <record id="partner_demo_4" model="res.partner">
+        <field name="name">Ковальчук Сергій Вікторович</field>
+        <field name="email">kovalchuk4@test.com</field>
+        <field name="phone">+380501000004</field>
+        <field name="city">Харків</field>
+    </record>
+
+    <record id="partner_demo_5" model="res.partner">
+        <field name="name">Бондаренко Роман Ігорович</field>
+        <field name="email">bondarenko5@test.com</field>
+        <field name="phone">+380501000005</field>
+        <field name="city">Одеса</field>
+    </record>
+
+    <record id="partner_demo_6" model="res.partner">
+        <field name="name">Мельник Віталій Сергійович</field>
+        <field name="email">melnyk6@test.com</field>
+        <field name="phone">+380501000006</field>
+        <field name="city">Дніпро</field>
+    </record>
+
+    <record id="partner_demo_7" model="res.partner">
+        <field name="name">Ткаченко Олексій Васильович</field>
+        <field name="email">tkachenko7@test.com</field>
+        <field name="phone">+380501000007</field>
+        <field name="city">Черкаси</field>
+    </record>
+
+    <record id="partner_demo_8" model="res.partner">
+        <field name="name">Кравченко Юрій Петрович</field>
+        <field name="email">kravchenko8@test.com</field>
+        <field name="phone">+380501000008</field>
+        <field name="city">Полтава</field>
+    </record>
+
+    <record id="partner_demo_9" model="res.partner">
+        <field name="name">Савченко Олег Андрійович</field>
+        <field name="email">savchenko9@test.com</field>
+        <field name="phone">+380501000009</field>
+        <field name="city">Суми</field>
+    </record>
+
+    <record id="partner_demo_10" model="res.partner">
+        <field name="name">Романенко Володимир Іванович</field>
+        <field name="email">romanenko10@test.com</field>
+        <field name="phone">+380501000010</field>
+        <field name="city">Житомир</field>
+    </record>
+
+    <record id="partner_demo_11" model="res.partner">
+        <field name="name">Гриценко Максим Юрійович</field>
+        <field name="email">grytsenko11@test.com</field>
+        <field name="phone">+380501000011</field>
+        <field name="city">Рівне</field>
+    </record>
+
+    <record id="partner_demo_12" model="res.partner">
+        <field name="name">Лисенко Павло Олександрович</field>
+        <field name="email">lysenko12@test.com</field>
+        <field name="phone">+380501000012</field>
+        <field name="city">Тернопіль</field>
+    </record>
+
+    <record id="partner_demo_13" model="res.partner">
+        <field name="name">Олійник Назар Ігорович</field>
+        <field name="email">oliinyk13@test.com</field>
+        <field name="phone">+380501000013</field>
+        <field name="city">Луцьк</field>
+    </record>
+
+    <record id="partner_demo_14" model="res.partner">
+        <field name="name">Мороз Артем Сергійович</field>
+        <field name="email">moroz14@test.com</field>
+        <field name="phone">+380501000014</field>
+        <field name="city">Ужгород</field>
+    </record>
+
+    <record id="partner_demo_15" model="res.partner">
+        <field name="name">Яценко Владислав Петрович</field>
+        <field name="email">yatsenko15@test.com</field>
+        <field name="phone">+380501000015</field>
+        <field name="city">Івано-Франківськ</field>
+    </record>
+
+    <record id="partner_demo_16" model="res.partner">
+        <field name="name">Федоренко Ігор Васильович</field>
+        <field name="email">fedorenko16@test.com</field>
+        <field name="phone">+380501000016</field>
+        <field name="city">Хмельницький</field>
+    </record>
+
+    <record id="partner_demo_17" model="res.partner">
+        <field name="name">Клименко Богдан Миколайович</field>
+        <field name="email">klymenko17@test.com</field>
+        <field name="phone">+380501000017</field>
+        <field name="city">Чернівці</field>
+    </record>
+
+    <record id="partner_demo_18" model="res.partner">
+        <field name="name">Рибак Денис Олександрович</field>
+        <field name="email">rybak18@test.com</field>
+        <field name="phone">+380501000018</field>
+        <field name="city">Вінниця</field>
+    </record>
+
+    <record id="partner_demo_19" model="res.partner">
+        <field name="name">Данилюк Тарас Юрійович</field>
+        <field name="email">danyliuk19@test.com</field>
+        <field name="phone">+380501000019</field>
+        <field name="city">Кропивницький</field>
+    </record>
+
+    <record id="partner_demo_20" model="res.partner">
+        <field name="name">Гончарук Євген Іванович</field>
+        <field name="email">honcharuk20@test.com</field>
+        <field name="phone">+380501000020</field>
+        <field name="city">Миколаїв</field>
+    </record>
+
+    <record id="partner_demo_21" model="res.partner">
+        <field name="name">Паламарчук Степан Олегович</field>
+        <field name="email">palamarchuk21@test.com</field>
+        <field name="phone">+380501000021</field>
+        <field name="city">Херсон</field>
+    </record>
+
+    <record id="partner_demo_22" model="res.partner">
+        <field name="name">Козак Руслан Васильович</field>
+        <field name="email">kozak22@test.com</field>
+        <field name="phone">+380501000022</field>
+        <field name="city">Запоріжжя</field>
+    </record>
+
+    <record id="partner_demo_23" model="res.partner">
+        <field name="name">Сидоренко Михайло Сергійович</field>
+        <field name="email">sydorenko23@test.com</field>
+        <field name="phone">+380501000023</field>
+        <field name="city">Маріуполь</field>
+    </record>
+
+    <record id="partner_demo_24" model="res.partner">
+        <field name="name">Назаренко Олександр Володимирович</field>
+        <field name="email">nazarenko24@test.com</field>
+        <field name="phone">+380501000024</field>
+        <field name="city">Біла Церква</field>
+    </record>
+
+    <record id="partner_demo_25" model="res.partner">
+        <field name="name">Хахуда Валентин Сергійович</field>
+        <field name="email">hakhuda25@test.com</field>
+        <field name="phone">+380501000025</field>
+        <field name="city">Чернігів</field>
+    </record>
+
+    <record id="partner_demo_26" model="res.partner">
+        <field name="name">Мазур Ілля Дмитрович</field>
+        <field name="email">mazur26@test.com</field>
+        <field name="phone">+380501000026</field>
+        <field name="city">Бровари</field>
+    </record>
+
+    <record id="partner_demo_27" model="res.partner">
+        <field name="name">Левченко Артем Андрійович</field>
+        <field name="email">levchenko27@test.com</field>
+        <field name="phone">+380501000027</field>
+        <field name="city">Ірпінь</field>
+    </record>
+
+    <record id="partner_demo_28" model="res.partner">
+        <field name="name">Тимошенко Кирило Іванович</field>
+        <field name="email">tymoshenko28@test.com</field>
+        <field name="phone">+380501000028</field>
+        <field name="city">Буча</field>
+    </record>
+
+    <record id="partner_demo_29" model="res.partner">
+        <field name="name">Гаврилюк Назар Олександрович</field>
+        <field name="email">havryliuk29@test.com</field>
+        <field name="phone">+380501000029</field>
+        <field name="city">Ніжин</field>
+    </record>
+
+    <record id="partner_demo_30" model="res.partner">
+        <field name="name">Прокопенко Денис Васильович</field>
+        <field name="email">prokopenko30@test.com</field>
+        <field name="phone">+380501000030</field>
+        <field name="city">Прилуки</field>
+    </record>
+
+</odoo>

@@ -55,6 +55,20 @@
                     <group>
                         <field name="comment" placeholder="Коментар"/>
                     </group>
+                    <notebook>
+                        <page string="Направлення">
+                            <field name="placement_practical_ids" readonly="1">
+                                <tree string="Направлення" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="enterprises_id"/>
+                                    <field name="head_of_practice"/>
+                                    <field name="active_practice_agreement_id"/>
+                                    <field name="number"/>
+                                    <field name="date_start_agreement"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>

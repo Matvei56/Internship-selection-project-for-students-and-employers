@@ -58,6 +58,20 @@
                             </field>
 
                         </page>
+                        <page string="Направлення">
+                            <label for="placement_practical_count"/>
+                            <field name="placement_practical_count"/>
+                            <field name="placement_practical_ids" readonly="1">
+                                <tree string="Направлення" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="enterprises_id"/>
+                                    <field name="head_of_practice"/>
+                                    <field name="active_practice_agreement_id"/>
+                                    <field name="number"/>
+                                    <field name="date_start_agreement"/>
+                                </tree>
+                            </field>
+                        </page>
                         <page string="Угоди">
                             <field name="practice_agreement_ids">
                                 <tree decoration-muted="state=='expired'"

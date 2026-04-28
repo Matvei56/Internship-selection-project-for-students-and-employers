@@ -6,6 +6,10 @@
     "data": [
         'reports/reports_templates.xml',
 
+        'demo/partner_demo_data.xml',
+        'demo/enterprises_demo.xml',
+
+
         'data/institutes_data.xml',
         'data/student_group_data.xml',
         'data/ir_cron_data.xml',

@@ -33,7 +33,7 @@ class Enterprises(models.Model):
     state = fields.Selection([
         ('inactive', 'Угода не активована'),
         ('active', 'Угода активована'),
-    ], string="Статус угоди", index=True)
+    ], string="Статус угоди", index=True, default='inactive')
 
     # Заяви до підприємства
     practice_request_ids = fields.One2many('chm_choice_of_practices.practice_request', 'enterprises_id',
@@ -43,6 +43,8 @@ class Enterprises(models.Model):
     places_limit = fields.Integer(string="Ліміт місць", related='active_practice_agreement_id.places_limit')
     places_remaining = fields.Integer(string="Місць залишилось")
 
+    placement_practical_ids = fields.One2many('chm_choice_of_practices.placement_practical', 'enterprises_id',
+                                             string='Направлення')
     # Угоди підприємства
     practice_agreement_ids = fields.One2many('chm_choice_of_practices.practice_agreement', 'enterprises_id',
                                              string='Угоди')
@@ -57,7 +59,10 @@ class Enterprises(models.Model):
 
     # Загальна кількість заяв до підприємства
     practice_request_count = fields.Integer(
-        string='Усьго заяв до підприємства', compute='_compute_practice_request_count', store=False)
+        string='Усьго заяв до підприємства', compute='_compute_practice_request_counts', store=False)
+
+    placement_practical_count = fields.Integer(
+        string='Усьго направлень до підприємства', compute='_compute_placement_practical_count', store=False)
 
     # Загальна кількість підприємств
     enterprises_count = fields.Integer(
@@ -100,7 +105,7 @@ class Enterprises(models.Model):
             )
             record.active_practice_agreement_id = active[:1].id if active else False
 
-    @api.depends('practice_request_ids')
+    @api.depends('practice_request_ids','placement_practical_ids')
     def _compute_practice_request_counts(self):
         for rec in self:
             new = in_progress = approved = rejected = needs_edits = 0
@@ -123,16 +128,17 @@ class Enterprises(models.Model):
             rec.rejected_request_count = rejected
             rec.needs_edits_request_count = needs_edits
             rec.practice_request_count = len(rec.practice_request_ids)
+            rec.placement_practical_count = len(rec.placement_practical_ids)
 
     @api.depends()
     def _compute_current_user(self):
         for rec in self:
             rec.current_user_id = self.env.user
 
-    @api.depends('practice_request_ids')
-    def _compute_practice_request_count(self):
-        for record in self:
-            record.practice_request_count = len(record.practice_request_ids)
+    # @api.depends('practice_request_ids')
+    # def _compute_practice_request_count(self):
+    #     for record in self:
+    #         record.practice_request_count = len(record.practice_request_ids)
 
     @api.depends('education_program_line_ids')
     def _compute_education_program_count(self):

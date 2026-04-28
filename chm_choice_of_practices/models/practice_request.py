@@ -7,7 +7,7 @@ class PracticeRequest(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Модель запитів на практику'
 
-    name = fields.Char(string="Назва", required=True, default="Нова заява")
+    name = fields.Char(string="Назва", required=True, default="Нова заява", compute='_compute_name')
     department_id = fields.Many2one('chm_choice_of_practices.departments', string="Кафедра", store=True)
 
     student_id = fields.Many2one(comodel_name="res.partner", string="Студент", required=True)
@@ -22,7 +22,11 @@ class PracticeRequest(models.Model):
         ('rejected', 'Відхилено'),
         ('needs_edits', 'Потребує правок'),
     ], string="Статус", default='new')
+    number = fields.Char(string="Number", required=True, copy=False, readonly=True, default='New')
+
     comment = fields.Text(string="Коментар")
+    placement_practical_ids = fields.One2many('chm_choice_of_practices.placement_practical', 'practice_request_id',
+                                              string='Направлення')
 
     def action_approve(self):
         for record in self:
@@ -47,16 +51,27 @@ class PracticeRequest(models.Model):
             'view_mode': 'form',
             'target': 'new',
             'context': {
-                'default_name': self.name,
                 'default_enterprises_id': self.enterprises_id.id,
-                # 'default_head_of_practice': self.head_of_practice.id,
-                # 'default_active_practice_agreement_id':
-                #     self.active_practice_agreement_id.id,
-                # 'default_date_start_agreement':
-                #     self.date_start_agreement,
-                # 'default_number': self.number,
+                'default_practice_request_id': self.id,
             }
         }
+
+    @api.depends('number', 'enterprises_id', 'student_id')
+    @api.onchange('number', 'enterprises_id', 'student_id')
+    def _compute_name(self):
+        for rec in self:
+            parts = []
+
+            if rec.number:
+                parts.append(f"Заява №{rec.number}")
+
+            if rec.student_id:
+                parts.append(f"студента {rec.student_id.name}")
+
+            if rec.enterprises_id:
+                parts.append(f"про проходження практики в {rec.enterprises_id.name}")
+
+            rec.name = " ".join(parts) if parts else "Заява"
 
     @api.constrains('enterprises_id')
     def _check_enterprise_active(self):
@@ -71,8 +86,14 @@ class PracticeRequest(models.Model):
                     "Неможливо створити запис, тому що угода підприємства не активована."
                 )
 
-    @api.model_create_multi
+    @api.model
     def create(self, vals_list):
+
+        if vals_list.get('number', 'New') == 'New':
+            vals_list['number'] = self.env['ir.sequence'].next_by_code(
+                'chm_choice_of_practices.practice_request'
+            ) or 'New'
+
         records = super().create(vals_list)
         records.state = 'in_progress'
 

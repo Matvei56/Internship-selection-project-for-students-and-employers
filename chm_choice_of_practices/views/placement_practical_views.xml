@@ -4,7 +4,9 @@
         <field name="model">chm_choice_of_practices.placement_practical</field>
         <field name="arch" type="xml">
             <form string="Направлення на практику">
-
+                <header>
+                    <field name="state" widget="statusbar" options="{'fold_field': 'fold'}"/>
+                </header>
                 <sheet>
 
                     <!-- Заголовок -->
@@ -25,6 +27,7 @@
                         <group>
                             <field name="active_practice_agreement_id" readonly="1"/>
                             <field name="number" readonly="1"/>
+                            <field name="practice_request_id" />
                         </group>
                     </group>
 

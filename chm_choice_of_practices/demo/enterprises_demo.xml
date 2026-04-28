@@ -1,0 +1,131 @@
+<odoo>
+
+    <!-- 1 -->
+    <record id="enterprise_demo_1" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "ІТ Системи Плюс"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">educational</field>
+        <field name="edrpou">40012345</field>
+        <field name="address">Київ, вул. Хрещатик, 10</field>
+        <field name="cite">https://itsys.ua</field>
+        <field name="field_of_activity">Розробка ПЗ</field>
+        <field name="notes">Сильна IT компанія для студентів</field>
+        
+    </record>
+
+    <!-- 2 -->
+    <record id="enterprise_demo_2" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "Агро Логістик"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">industrial</field>
+        <field name="edrpou">40123456</field>
+        <field name="address">Чернігів, вул. Промислова, 5</field>
+        <field name="cite">https://agro-log.ua</field>
+        <field name="field_of_activity">Логістика та агросектор</field>
+        <field name="notes">Практика на виробництві</field>
+        
+    </record>
+
+    <!-- 3 -->
+    <record id="enterprise_demo_3" model="chm_choice_of_practices.enterprises">
+        <field name="name">ПП "Дніпро Софт"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">project_technological</field>
+        <field name="edrpou">40234567</field>
+        <field name="address">Дніпро, вул. Центральна, 21</field>
+        <field name="cite">https://dniprosoft.ua</field>
+        <field name="field_of_activity">ІТ аутсорсинг</field>
+        <field name="notes">Проєктна розробка</field>
+        
+    </record>
+
+    <!-- 4 -->
+    <record id="enterprise_demo_4" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "МедТех Україна"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">industrial</field>
+        <field name="edrpou">40345678</field>
+        <field name="address">Львів, вул. Медична, 7</field>
+        <field name="cite">https://medtech.ua</field>
+        <field name="field_of_activity">Медичне обладнання</field>
+        <field name="notes">Виробнича база</field>
+    </record>
+
+    <!-- 5 -->
+    <record id="enterprise_demo_5" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "Енерго Сервіс"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">pre_diploma</field>
+        <field name="edrpou">40456789</field>
+        <field name="address">Харків, вул. Енергетична, 3</field>
+        <field name="cite">https://energo.ua</field>
+        <field name="field_of_activity">Енергетика</field>
+        <field name="notes">Переддипломна практика</field>
+        
+    </record>
+
+    <!-- 6 -->
+    <record id="enterprise_demo_6" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "Фінанс Груп"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">educational</field>
+        <field name="edrpou">40567890</field>
+        <field name="address">Київ, вул. Банкова, 15</field>
+        <field name="cite">https://finance.ua</field>
+        <field name="field_of_activity">Фінанси</field>
+        <field name="notes">Навчальні стажування</field>
+        
+    </record>
+
+    <!-- 7 -->
+    <record id="enterprise_demo_7" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "Буд Інвест"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">industrial</field>
+        <field name="edrpou">40678901</field>
+        <field name="address">Одеса, вул. Будівельна, 11</field>
+        <field name="cite">https://buildinvest.ua</field>
+        <field name="field_of_activity">Будівництво</field>
+        <field name="notes">Будівельна практика</field>
+    </record>
+
+    <!-- 8 -->
+    <record id="enterprise_demo_8" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "Digital Future"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">project_technological</field>
+        <field name="edrpou">40789012</field>
+        <field name="address">Львів, вул. ІТ, 8</field>
+        <field name="cite">https://dfuture.ua</field>
+        <field name="field_of_activity">Software Engineering</field>
+        <field name="notes">Сучасні технології</field>
+        
+    </record>
+
+    <!-- 9 -->
+    <record id="enterprise_demo_9" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "LogiTrans"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">industrial</field>
+        <field name="edrpou">40890123</field>
+        <field name="address">Вінниця, вул. Транспортна, 2</field>
+        <field name="cite">https://logitrans.ua</field>
+        <field name="field_of_activity">Транспорт і логістика</field>
+        <field name="notes">Складська практика</field>
+        
+    </record>
+
+    <!-- 10 -->
+    <record id="enterprise_demo_10" model="chm_choice_of_practices.enterprises">
+        <field name="name">ТОВ "CyberNet"</field>
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="practice_type">educational</field>
+        <field name="edrpou">40901234</field>
+        <field name="address">Київ, вул. Інтернетна, 9</field>
+        <field name="cite">https://cybernet.ua</field>
+        <field name="field_of_activity">Кібербезпека</field>
+        <field name="notes">Практика з безпеки</field>
+        
+    </record>
+
+</odoo>

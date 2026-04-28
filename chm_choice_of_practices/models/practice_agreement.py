@@ -8,13 +8,13 @@ class PracticeAgreement(models.Model):
     _description = 'Угода з підприємством'
     _rec_name = 'display_name'
 
-    number = fields.Char(string="Number", required=True,copy=False, readonly=True, default='New' )
+    number = fields.Char(string="Number", required=True, copy=False, readonly=True, default='New' )
     date_start = fields.Date(string="Дата укладення", required=True, default=fields.Date.context_today)
     state = fields.Selection([
         ('inactive', 'Неактивна'),
         ('active', 'Активована'),
         ('expired', 'Прострочена'),
-    ], string="Статус", default='inactive')
+    ], string="Статус", )
 
     is_unlimited = fields.Boolean(
         string="Безстрокова угода",
@@ -120,10 +120,6 @@ class PracticeAgreement(models.Model):
             vals['number'] = self.env['ir.sequence'].next_by_code(
                 'chm_choice_of_practices.practice_agreement'
             ) or 'New'
-
-        for val in vals:
-            if 'places_limit' in val:
-                val['places_remaining'] = val['places_limit']
 
         record = super().create(vals)
         record.state = 'active'

@@ -20,6 +20,7 @@ class EducationProgram(models.Model):
         ('approved', 'Затверджено'),
     ], string='Статус програми')
 
+    departments_id = fields.Many2one('chm_choice_of_practices.departments',string='Кафедра')
     curriculum = fields.Text(string='Навчальні плани')
     start_date = fields.Date(string='Дата введення в дію')
     admission_year = fields.Char(string='Рік набору')
