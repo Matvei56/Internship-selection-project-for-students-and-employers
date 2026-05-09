@@ -56,6 +56,16 @@ class PracticeRequest(models.Model):
             }
         }
 
+    @api.constrains('enterprises_id')
+    def _check_enterprise_places(self):
+
+        for record in self:
+
+            if record.enterprises_id and record.enterprises_id.is_places_full:
+                raise ValidationError(
+                    "Неможливо створити заяву: на підприємстві вже заповнені всі місця."
+                )
+
     @api.depends('number', 'enterprises_id', 'student_id')
     @api.onchange('number', 'enterprises_id', 'student_id')
     def _compute_name(self):

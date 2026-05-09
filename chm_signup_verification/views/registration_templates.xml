@@ -8,7 +8,9 @@
                             <div class="card shadow">
                                 <div class="card-body">
                                     <h3 class="text-center mb-4">Реєстрація</h3>
-                                    <p class="text-muted">Введіть свою електронну адресу, ми надішлемо посилання для підтвердження.</p>
+                                    <p class="text-muted">Введіть свою електронну адресу, ми надішлемо посилання для
+                                        підтвердження.
+                                    </p>
                                     <form action="/signup/send_token" method="post">
                                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
@@ -39,5 +41,12 @@
                 <p>Будь ласка, перевірте свою електронну пошту та перейдіть за посиланням, щоб завершити реєстрацію.</p>
             </div>
         </t>
+    </template>
+    <template id="custom_signup_override" inherit_id="auth_signup.login">
+
+        <xpath expr="//a[contains(@t-attf-href, '/web/signup')]" position="attributes">
+            <attribute name="t-attf-href">/signup/email_input?{{ keep_query() }}</attribute>
+        </xpath>
+
     </template>
 </odoo>

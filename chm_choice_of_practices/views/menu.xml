@@ -16,6 +16,9 @@
         <menuitem id="menu_practice_request_for_student" sequence="3" name="Мої заяви"
                   action="chm_choice_of_practices.action_practice_request"
                   groups="chm_choice_of_practices.group_student_only"/>
+         <menuitem id="menu_placement_practical_for_student" sequence="3" name="Мої направлення"
+                  action="chm_choice_of_practices.action_placement_practical"
+                  groups="chm_choice_of_practices.group_student_only"/>
         <menuitem id="menu_general_contacts" sequence="4" name="Контакти"
                   groups="chm_choice_of_practices.group_administrator">
             <menuitem id="menu_contacts" sequence="1" name="Усі контакти"

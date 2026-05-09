@@ -9,7 +9,8 @@
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" name="actions_create_request" type="object">
+                        <button class="oe_stat_button" name="actions_create_request" type="object"
+                                attrs="{'invisible': [('is_places_full', '=', True)]}">
                             <div style="display: flex; justify-content: center;">
                                 <div class="o_stat_info" style="display: flex; justify-content: center;">
                                     <strong class="ml-2">
@@ -31,10 +32,18 @@
                             <field name="partner_id" readonly="0"/>
                             <field name="address"/>
                             <field name="practice_type"/>
+                        </group>
+                        <group>
+
+
                             <field name="cite"/>
                             <field name="field_of_activity"/>
                             <field name="notes"/>
                             <field name="places_limit"/>
+                            <field name="places_remaining"/>
+                            <field name="is_places_full"/>
+                            <field name="is_places_full" readonly="1"
+                                   attrs="{'invisible': [('is_places_full', '=', False)]}"/>
                         </group>
                     </group>
 
@@ -141,7 +150,8 @@
                 <field name="practice_type"/>
                 <field name="address"/>
                 <field name="field_of_activity"/>
-                <field name="practice_request_count" groups="chm_choice_of_practices.group_administrator"/>
+                <field name="is_places_full"/>
+                <!--                <field name="practice_request_count" groups="chm_choice_of_practices.group_administrator"/>-->
             </tree>
         </field>
     </record>
@@ -165,6 +175,13 @@
                         string="Не активні"
                         domain="[('state','=','inactive')]"/>
                 <separator/>
+                <filter name="is_places_full_false"
+                        string="Є вільні місця"
+                        domain="[('is_places_full','=',False)]"/>
+                <filter name="is_places_full_true"
+                        string="Немає вільних місць"
+                        domain="[('is_places_full','=',True)]"/>
+                <separator/>
                 <filter name="educational"
                         string="Навчальна практика"
                         domain="[('practice_type','=','educational')]"/>
@@ -183,6 +200,9 @@
                     <filter name="group_by_state"
                             string="Статус угоди"
                             context="{'group_by':'state'}"/>
+                    <filter name="group_by_is_places_full"
+                            string="Наявність місць"
+                            context="{'group_by':'is_places_full'}"/>
                     <filter name="group_by_practice_type"
                             string="Тип практики"
                             context="{'group_by':'practice_type'}"/>

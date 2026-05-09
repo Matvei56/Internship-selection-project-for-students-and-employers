@@ -1,13 +1,14 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
-
+import logging
+_logger = logging.getLogger(__name__)
 class Enterprises(models.Model):
     _name = 'chm_choice_of_practices.enterprises'
     _description = 'Модель підприємств'
 
     # Назва підприємства
-    name = fields.Char(string="Назва", index=True ,required=True, help="Назва підприємства/місця проходження практики")
+    name = fields.Char(string="Назва", index=True, required=True, help="Назва підприємства/місця проходження практики")
 
     # Відповідальна особа підприємства
     partner_id = fields.Many2one('res.partner', 'Відповідальна особа', default=lambda self: self.env.user.partner_id)
@@ -40,11 +41,16 @@ class Enterprises(models.Model):
                                            string='Заяви')
 
     # Загальна та актуальна кількість місць
-    places_limit = fields.Integer(string="Ліміт місць", related='active_practice_agreement_id.places_limit')
-    places_remaining = fields.Integer(string="Місць залишилось")
+    places_limit = fields.Integer(string="Ліміт місць", related='active_practice_agreement_id.places_limit',
+                                  )
+
+    places_remaining = fields.Integer(string="Місць залишилось", compute="_compute_places",
+                                      )
+
+    is_places_full = fields.Boolean(string="Всі місця заповнені", compute="_compute_places", store=True)
 
     placement_practical_ids = fields.One2many('chm_choice_of_practices.placement_practical', 'enterprises_id',
-                                             string='Направлення')
+                                              string='Направлення')
     # Угоди підприємства
     practice_agreement_ids = fields.One2many('chm_choice_of_practices.practice_agreement', 'enterprises_id',
                                              string='Угоди')
@@ -54,19 +60,19 @@ class Enterprises(models.Model):
         'chm_choice_of_practices.practice_agreement',
         string='Активна угода',
         compute='_compute_active_practice_agreement',
-        store=True
+        store=False
     )
 
     # Загальна кількість заяв до підприємства
     practice_request_count = fields.Integer(
-        string='Усьго заяв до підприємства', compute='_compute_practice_request_counts', store=False)
+        string='Усього заяв до підприємства', compute='_compute_practice_request_counts', store=False)
 
     placement_practical_count = fields.Integer(
-        string='Усьго направлень до підприємства', compute='_compute_placement_practical_count', store=False)
+        string='Усього направлень до підприємства', compute='_compute_placement_practical_count')
 
     # Загальна кількість підприємств
     enterprises_count = fields.Integer(
-        string='Усьго підприємств', compute='_compute_enterprises_count', store=False)
+        string='Усього підприємств', compute='_compute_enterprises_count', store=False)
 
     # Поля кількостей заяв для друку
     new_request_count = fields.Integer(compute="_compute_practice_request_counts", string="Нові")
@@ -95,7 +101,27 @@ class Enterprises(models.Model):
 
     # Освітні програми
     education_program_line_ids = fields.One2many('chm_choice_of_practices.education_program_line', 'enterprises_id',
-                                            string='Освітні програми')
+                                                 string='Освітні програми')
+
+    @api.depends('places_limit', 'placement_practical_ids.state')
+    def _compute_places(self):
+        for enterprise in self:
+            active_count = len(
+                enterprise.placement_practical_ids.filtered(
+                    lambda p: p.state == 'active'
+                )
+            )
+
+            limit = enterprise.places_limit or 0
+
+            remaining = limit - active_count
+
+            enterprise.places_remaining = max(remaining, 0)
+
+            if limit == 0:
+                enterprise.is_places_full = False
+            else:
+                enterprise.is_places_full = active_count >= limit
 
     @api.depends('practice_agreement_ids.state')
     def _compute_active_practice_agreement(self):
@@ -105,7 +131,12 @@ class Enterprises(models.Model):
             )
             record.active_practice_agreement_id = active[:1].id if active else False
 
-    @api.depends('practice_request_ids','placement_practical_ids')
+    @api.depends('placement_practical_ids')
+    def _compute_placement_practical_count(self):
+        for rec in self:
+            rec.placement_practical_count = len(rec.placement_practical_ids)
+
+    @api.depends('practice_request_ids', 'placement_practical_ids')
     def _compute_practice_request_counts(self):
         for rec in self:
             new = in_progress = approved = rejected = needs_edits = 0
@@ -128,7 +159,6 @@ class Enterprises(models.Model):
             rec.rejected_request_count = rejected
             rec.needs_edits_request_count = needs_edits
             rec.practice_request_count = len(rec.practice_request_ids)
-            rec.placement_practical_count = len(rec.placement_practical_ids)
 
     @api.depends()
     def _compute_current_user(self):
@@ -207,3 +237,11 @@ class Enterprises(models.Model):
                 'Не можна створити заявку: підприємство не активне!'
             )
         return record
+
+
+
+
+    #todo треба буде убрать
+    def write(self, vals):
+        _logger.warning("WRITE VALUES: %s", vals)
+        return super().write(vals)

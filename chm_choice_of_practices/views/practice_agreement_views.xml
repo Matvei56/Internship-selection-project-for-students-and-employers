@@ -15,7 +15,7 @@
                             <div style="display: flex; justify-content: center;">
                                 <div class="o_stat_info" style="display: flex; justify-content: center;">
                                     <strong class="ml-2">
-                                        Активувати заяву
+                                        Активувати угоду
                                     </strong>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                             <div style="display: flex; justify-content: center;">
                                 <div class="o_stat_info" style="display: flex; justify-content: center;">
                                     <strong class="ml-2">
-                                        Деактивувати заяву
+                                        Деактивувати угоду
                                     </strong>
                                 </div>
                             </div>

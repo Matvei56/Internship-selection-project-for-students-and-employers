@@ -6,6 +6,13 @@
         <field name="groups" eval="[(4, ref('chm_choice_of_practices.group_student_only'))]"/>
     </record>
 
+    <record id="placement_practical_rule_student_own" model="ir.rule">
+        <field name="name">Student: only own placement practical</field>
+        <field name="model_id" ref="model_chm_choice_of_practices_placement_practical"/>
+        <field name="domain_force">[('student_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('chm_choice_of_practices.group_student_only'))]"/>
+    </record>
+
     <record id="practice_request_rule_admin_all" model="ir.rule">
         <field name="name">Admin: all practice requests</field>
         <field name="model_id" ref="model_chm_choice_of_practices_practice_request"/>
